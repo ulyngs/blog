@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>ULRIK LYNGS</title>
+    <link>https://beta.rstudioconnect.com/content/3776/</link>
+    <atom:link href="https://beta.rstudioconnect.com/content/3776/index.xml" rel="self" type="application/rss+xml"/>
+    <description>A blog about technology, psychology, and data science.
+</description>
+    <image>
+      <title>ULRIK LYNGS</title>
+      <url>https://beta.rstudioconnect.com/content/3776/images/headshot_0.jpg</url>
+      <link>https://beta.rstudioconnect.com/content/3776/</link>
+    </image>
+    <generator>Radix</generator>
+    <lastBuildDate>Tue, 23 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>R packages for CHI papers with R Markdown</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown</link>
+      <description>In a previous blog post, I detailed at length the nitty-gritty of how one might take the ACM Master Article LaTeX templates and get them to play nicely with R Markdown. To make it super easy in practice, I created two R packages which supply easy-to-use R Markdown templates in RStudio for CHI Proceedings and CHI Extended Abstracts.</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown</guid>
+      <pubDate>Tue, 23 Oct 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://beta.rstudioconnect.com/content/3776/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown/preview.png" medium="image" type="image/png" width="2226" height="1748"/>
+    </item>
+    <item>
+      <title>How to Write ACM Articles with R Markdown</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown</link>
+      <description>I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template.</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown</guid>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      <media:content url="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/preview.png" medium="image" type="image/png" width="2880" height="1800"/>
+    </item>
+    <item>
+      <title>Ulysses in Cyberspace</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-ulysses-in-cyberspace</link>
+      <description>Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-ulysses-in-cyberspace</guid>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-ulysses-in-cyberspace/preview.png" medium="image" type="image/png" width="1069" height="502"/>
+    </item>
+    <item>
+      <title>Making Statistics Make Sense</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense</link>
+      <description>For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense</guid>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
+      <media:content url="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Digging Science Out of a Hole: The Reproducibility Index</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index</link>
+      <description>Science is in trouble. We find ourselves with a mess of publications in which true findings are scattered among false positives. An unacceptably wide range of claims can be made to seem legitimate by cherrypicking the literature. We urgently need a transparent metric for the level of confidence to have in specific findings - we urgently need a 'Reproducibility Index'.</description>
+      <guid>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index</guid>
+      <pubDate>Mon, 26 Sep 2016 00:00:00 +0000</pubDate>
+      <media:content url="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>

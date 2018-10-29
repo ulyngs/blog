@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="radix" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+  <!--radix_placeholder_meta_tags-->
+<title>ULRIK LYNGS: Making Statistics Make Sense</title>
+
+<meta property="description" itemprop="description" content="For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."/>
+
+<link rel="canonical" href="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/"/>
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+<link rel="icon" type="image/jpeg" href="../../images/headshot_0.jpg"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2017-02-26"/>
+<meta property="article:created" itemprop="dateCreated" content="2017-02-26"/>
+<meta name="article:author" content="Ulrik Lyngs"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="ULRIK LYNGS: Making Statistics Make Sense"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."/>
+<meta property="og:url" content="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/"/>
+<meta property="og:image" content="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/preview.jpg"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="ULRIK LYNGS"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="ULRIK LYNGS: Making Statistics Make Sense"/>
+<meta property="twitter:description" content="For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."/>
+<meta property="twitter:url" content="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/"/>
+<meta property="twitter:image" content="https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/preview.jpg"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","preview","categories","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY"]},{"type":"character","attributes":{},"value":["Making Statistics Make Sense"]},{"type":"character","attributes":{},"value":["For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["02-26-2017"]},{"type":"character","attributes":{},"value":["preview.jpg"]},{"type":"character","attributes":{},"value":["statistics","usability"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["making-statistics-make-sense_files/bowser-1.9.3/bowser.min.js","making-statistics-make-sense_files/distill-2.2.21/template.v2.js","making-statistics-make-sense_files/jquery-1.11.3/jquery.min.js","making-statistics-make-sense_files/webcomponents-2.0.0/webcomponents.js","preview.jpg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.radix-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.radix-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #455a64;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.radix-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.radix-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .radix-site-nav {
+    display: none;
+  }
+}
+
+.radix-site-header {
+
+}
+
+.radix-site-footer {
+
+}
+
+
+/* Site Header */
+
+.radix-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.radix-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .radix-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.radix-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.radix-site-header a,
+.radix-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.radix-site-header .title {
+  font-size: 18px;
+}
+
+.radix-site-header .logo {
+  padding: 0;
+}
+
+.radix-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.radix-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .radix-site-header .logo img {
+    display: inline-block;
+  }
+  .radix-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .radix-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .radix-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.radix-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
+  .radix-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .radix-site-header .title {
+    margin-left: 0;
+  }
+  .radix-site-header .nav-right {
+    margin-right: 0;
+  }
+  .radix-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .radix-site-header.responsive {position: relative;}
+  .radix-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .radix-site-header.responsive a,
+  .radix-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .radix-site-header.responsive .nav-left,
+  .radix-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .radix-site-header.responsive .nav-dropdown {float: none;}
+  .radix-site-header.responsive .nav-dropdown-content {position: relative;}
+  .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.radix-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+</style>
+
+<link href="../../site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
+<script src="../../site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="../../site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for table of contents */
+
+.d-toc {
+  color: rgba(0,0,0,0.8);
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+.d-toc-header {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.3em;
+}
+
+.d-toc a {
+  border-bottom: none;
+}
+
+.d-toc ul {
+  padding-left: 0;
+}
+
+.d-toc li>ul {
+  padding-top: 0.8em;
+  padding-left: 16px;
+  margin-bottom: 0.6em;
+}
+
+.d-toc ul,
+.d-toc li {
+  list-style-type: none;
+}
+
+.d-toc li {
+  margin-bottom: 0.9em;
+}
+
+.d-toc-separator {
+  margin-top: 20px;
+  margin-bottom: 2em;
+}
+
+.d-article-with-toc {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+
+/* Tweak code blocks (note that this CSS is repeated above in an injection
+   into the d-code shadow dom) */
+
+pre.d-code code.d-code {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+pre.text-output {
+
+  font-size: 12px;
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media(min-width: 768px) {
+pre.d-code code.d-code  {
+    padding-left: 18px;
+    font-size: 14px;
+}
+pre.text-output {
+  font-size: 14px;
+}
+}
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // create d-bibliography
+  var bibliography = $('<d-bibliography></d-bibliography>');
+  $('#distill-bibliography').wrap(bibliography);
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace citations with <d-cite>
+  $('.citation').each(function(i, val) {
+    appendix = true;
+    var cites = $(this).attr('data-cites').split(" ");
+    var dt_cite = $('<d-cite></d-cite>');
+    dt_cite.attr('key', cites.join());
+    $(this).replaceWith(dt_cite);
+  });
+  // remove refs
+  $('#refs').remove();
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-toc a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // replace code blocks with d-code
+  $('pre>code').each(function(i, val) {
+    var code = $(this);
+    var pre = code.parent();
+    var clz = "";
+    var language = pre.attr('class');
+    if (language) {
+      // map unknown languages to "clike" (without this they just dissapear)
+      if ($.inArray(language, ["bash", "clike", "css", "go", "html",
+                               "javascript", "js", "julia", "lua", "markdown",
+                               "markup", "mathml", "python", "svg", "xml"]) == -1)
+        language = "clike";
+      language = ' language="' + language + '"';
+      var dt_code = $('<d-code block' + language + clz + '></d-code>');
+      dt_code.text(code.text());
+      pre.replaceWith(dt_code);
+    } else {
+      code.addClass('text-output').unwrap().changeElementType('pre');
+    }
+  });
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('d-code, pre.text-output, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // table of contents
+    if (have_authors) // adjust border if we are in authors
+      $('.d-toc').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // inject pre code styles (can't do this with a global stylesheet b/c a shadow root is used)
+    $('d-code').each(function(i, val) {
+      var style = document.createElement('style');
+      style.innerHTML = 'pre code { padding-left: 10px; font-size: 12px; border-left: 2px solid rgba(0,0,0,0.1); } ' +
+                        '@media(min-width: 768px) { pre code { padding-left: 18px; font-size: 14px; } }';
+      if (this.shadowRoot)
+        this.shadowRoot.appendChild(style);
+    });
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-toc-header').remove();
+  $('.d-toc').remove();
+  $('.d-toc-separator').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.radix-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77306155-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-77306155-2');
+</script>
+<style type="text/css">
+/*hide title*/
+.posts-list-caption {
+  display: none;
+}
+
+.radix-site-header {
+  background-color: white;
+  border-bottom: 2px #e7e7e7 solid;
+}
+
+.nav-left {
+  color: #777;
+  margin-left: 10% !important;
+}
+
+.nav-right {
+  color: #777;
+  margin-right: 10% !important;
+}
+
+.nav-left .title {
+  font-size: 2.75em;
+}
+
+/* remove the citation on posts */
+.byline.grid div:nth-child(3) {
+  display: none;
+}
+
+.posts-with-sidebar {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-right: 0 !important;
+  padding-left: 18px !important;
+}
+</style>
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Making Statistics Make Sense","description":"For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2017-02-26T00:00:00.000+01:00","citationText":"Lyngs, 2017"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="radix-site-nav radix-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">ULRIK LYNGS</a>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Posts</a>
+<a href="https://ulriklyngs.com">Back to website</a>
+<a href="../../index.xml">
+<i class="fa fa-rss"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Making Statistics Make Sense</h1>
+<p>For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.</p>
+</div>
+
+<div class="d-byline">
+  Ulrik Lyngs <a href="https://www.ulriklyngs.com" class="uri">https://www.ulriklyngs.com</a> 
+  
+<br/>02-26-2017
+</div>
+
+<div class="d-article">
+<p>Learning statistics is unavoidable for researchers. Aside from a few last refuges like literary theory, philosophy, or ethnography, understanding the world by analysing quantitative data reigns king in nearly all fields. If a psychologist wants to know whether power posing makes people behave more confidently, he conducts experiments and uses statistics to judge whether his hypotheses were supported. If a social scientist wants to understand motivations of Trump vs Clinton voters, statistics tell her how many people to survey, and afterwards whether the voters are different.</p>
+<p>For most people, however, statistics is hard, and many find the mere idea of learning it terrifying. I remember taking a statistics course in which the lecturer after each class would project a huge image of cute puppies onto the screen, to calm down the frustrated humanities students in the room…</p>
+<p>Even among established academic researchers, the level of statistical literacy is often not what it ought to be. One researcher used a computer program to recalculate critical statistical tests in 250,000 articles published in major psychology journals, and found that <a href="https://www.ncbi.nlm.nih.gov/pubmed/26497820"><em>one in eight</em> had at least one grossly inconsistent <em>p</em>-value</a> that may have invalidated the article’s statistical conclusions. A recent review of papers published in top-journals (e.g. <em>Science</em>) found that <a href="http://www.nature.com/neuro/journal/v14/n9/full/nn.2886.html">15% used incorrect statistical procedures</a>, and another review drily remarked that it’s “<a href="http://onlinelibrary.wiley.com/doi/10.1890/0012-9658(2003)084%5B0810:DAAUIU%5D2.0.CO;2/abstract;jsessionid=219AEBEE8E81265F6BE027D500DC55D2.f02t02">easier to get a paper published if one uses erroneous statistical analysis than if one uses no statistical analysis at all</a>”.</p>
+<h1 id="what-to-do">What to do?</h1>
+<p>So what do we do about the fact that statistical literacy is exceedingly important, yet people find stats difficult and scary to learn and even senior researchers make blatant mistakes? One approach is to make statistics more fun to learn by using sexy and eye-grabbing data sets in statistics classes. For example, <a href="http://www.statisticshell.com">Andy Field</a>’s popular series of textbooks <em>Discovering Statistics</em> carry the subtitle “<em>… and Sex and Drugs and Rock ’n’Roll</em>” and has their reader learn statistics by analysing things like (lack of) personal hygiene at festivals, the effect of using Coke as a contraceptive, and the relationship between being off-one’s-face drunk and getting into physical fights (!).</p>
+<p>Such a ‘sugar coating’ approach, however, only takes us so far. A more radical approach is to reconsider the statistical vocabulary we use in the first place.</p>
+<p>The purpose of a scientific vocabulary, I would argue, is to (a) give concrete form to useful concepts (b) in a way that’s concise and puts minimal strain on our working memory, and which (c) is quick and easy to learn and remember. How are we doing in statistics, relative to this target? Do we use terms that make our concepts clear, transparent, and easy to memorise? Or (you can probably tell where I’m going with this…) have we created a wasteland of arbitrary symbols and names of statistical inventors that both makes terms difficult to remember and obscures their internal relationships? I think the latter is true to a disturbing degree.</p>
+<h1 id="the-problem-with-statistics---example-1-the-chi-squared-test">The problem with statistics - Example 1: the chi-squared test</h1>
+<p>Imagine I want to know if there’s a relationship between how often people go fishing and how often they eat fish. I might go and ask 1,701 random people two questions: <em>How often do you go fishing?</em> and <em>How often do you eat fish?</em> Let’s say I get these results:</p>
+<p><img src="http://ulriklyngs.com/sites/default/files/fishing-histogram.jpg" /></p>
+<p>These are the distributions of people answering ’Never’, ‘Sometimes’, and ‘Always’ to my two questions (‘Always’ means that you just can’t ever stop yourselves fishing, or, that you just can’t stop putting fish in your mouth because it’s too delicious). I ask each person both questions, so each person has one score in one distribution and one in the other, and it’s the relationship between the two that we are interested in. We can show the data in another way to get the combinations of answers:</p>
+<p><img src="http://ulriklyngs.com/sites/default/files/fishing-xtab.png" /></p>
+<p>There seems to be a relationship - among people that “Always” go fishing, 48% never eats fish, whereas among people that “Never” go fishing, only 29% never eats fish. We seem to have a negative relationship, where people who go fishing more often are less likely to eat fish. But maybe this relation is just a coincidence? How do I test that? One way is to think about what proportion of responses of ‘Never’, ‘Sometimes’ and ‘Always’ I’d expect on ‘Eats fish’ if it actually doesn’t matter whether people go fishing. In this case, no matter what people answer on ‘Goes fishing’ I should see the same distribution of answers to ‘Eats fish’, as I do overall. Like this:</p>
+<p><img src="http://ulriklyngs.com/sites/default/files/fishing-expectations_0.jpg" /></p>
+<p>In other words, I can find out what proportions of eating fish I <em>expect</em> to see if it doesn’t change with how often one goes fishing. Then I check how different the proportions I actually <em>observe</em> are from what I expected. Finally, I can find out how likely it is that I get this difference just by chance, if there isn’t actually a real difference - and this is my “<em>p</em>-value”.</p>
+<p>Now, what might be a sensible name for such a test? It’s kind of a Proportions_Observed-vs-Proportions_Expected test. Maybe it’s called a POPE-test? And maybe there’s a subscript that disambiguate it from similar tests that use the same idea, while making it obvious that the tests share a relationship? Well, the convention statisticians settled on is to call it a “chi-squared”-test. You know, just to make things obvious.</p>
+<h1 id="the-problem-with-statistics---example-2-chi-squares-measures-of-association">The problem with statistics - Example 2: chi-square’s measures of association</h1>
+<p>Okay, let’s return to our example. Let’s say that my POPE, apologies, my <em>chi-squared test</em> tells me it is super unlikely to see a difference between expected and observed proportions this large by chance. In the jargon, my result is “statistically significant”.</p>
+<p>“Statistically significant”, however, doesn’t mean “this effect is big and important”. It just means “I am unlikely to observe this data by chance if there’s no actual relationship between my variables”. It doesn’t tell me anything about the <em>size</em> of the relationship. (We should all pledge to stop calling effects “significant” and instead say e.g. “detectable”, so we don’t in the minds of our readers - or ourselves - conflate the existence of a relationship with its magnitude or importance. A ‘statistically significant effect’ only means that it’s ‘statistically detectable’. Moving on.) So what do I do if I want to know how strong the association is?</p>
+<p>Here’s one approach: Say I find that how often people eat fish varies depending on how often they go fishing. When we look at the data it seems that there is a negative relationship, where people less frequently eat fish the more often they go fishing. (Maybe people who fish more also eat less fish because they acquire greater empathy with fish, after seeing them repeatedly trying to escape from the hook…) How do I put an objective number on how strong the relationship is?</p>
+<p>I might start by counting the number of times where a participant who scores higher than other participants on ‘goes fishing’ also scores higher than others on ‘eats fish’. Statisticians call this “concordant pairs”:</p>
+<p><img src="http://ulriklyngs.com/sites/default/files/fishing-concordant.jpg" /></p>
+<p>In my drawing, some people say they ‘always’ goes fishing, and also say that they ‘always’ eat fish. The participants who score lower than ‘always’ on goes fishing and also lower than ‘always’ on eats fish, form ‘concordant’ pairs with the always-always people.</p>
+<p>Next I count the number of times where the opposite happens. That is, the times where a participant who scores higher than other participants on ‘goes fishing’ scores <strong>lower</strong> on ‘eats fish’ than the others. Statisticians call this “discordant pairs”:</p>
+<p><img src="http://ulriklyngs.com/sites/default/files/fishing-discordant.jpg" /></p>
+<p>In my drawing, some people say they ‘never’ goes fishing, and also that they ‘always’ eat fish. People who score higher than ‘never’ on goes fishing but lower than ‘always’ on eats fish, form ‘discordant’ pairs with the never-always people.</p>
+<p>Now, if I’ve got a strong negative relationship where people who more often goes fishing almost always eat less fish than those who less often goes fishing, then there will be many more discordant pairs than concordant pairs. So one simple measure of effect size is the difference between concordant pairs and discordant pairs, compared to the total number of those pairs.</p>
+<p>What might such a test be called? It’s a kind of Concordant-vs-Discordant-Pairs Test. Maybe it’s called a Concordance-Difference-Test, or ConDif for short? Again, clever people might come up with lots of variations on this kind of test, so maybe there’s a good name for this general approach, like ConDif, and then various subscripts that disambiguate related tests from one another, while making it obvious that they take the same kind of approach?</p>
+<p>Well, statisticians’ name for this test is ‘Goodman-Kruskal’s gamma test’, or just ‘gamma test’. Okay, okay. But have they at least been consistent and named the test variations that use the difference between concordant and discordant pairs something with ‘gamma’? Not quite. Some of the popular variations on the approach are called “Yule’s Q”, “Somer’s d”, and “Kendall’s tau” (Kendall’s tau in turn has versions a, b, and c).</p>
+<h4 id="how-to-do-statistics-better">How to do statistics better</h4>
+<p>I could go on, but this should be enough to illustrate the point. For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering the concepts unnecessarily difficult. It increases the number of terms to learn (with the consequence that many give up in frustration or just can’t be bothered) and puts a smokescreen over the relationship between tests.</p>
+<p>If we accept that statistics is both a) super important and b) super difficult for many people, then we need to think hard about the best ways to teach and communicate it. We might try to sugar coat our current terms to students. However, sugar coating only takes us so far when our vocabulary is arcane and obscure in the first place. In some cases we do have okay terminology or have made an effort to improve the ones we had. For example, the term ‘ANOVA’ is alright - it’s short for ‘ANalysis Of Variance’ and gives a hint that it works on a principle of comparing variance between groups. Similarly, the simple term ‘bell-curve’, used in place of the obscure ‘Gaussian distribution’, substitutes veneration of a statistics guru with a term that gives an immediate reminder of what it points to.</p>
+<p>Reforming our statistics vocabulary is a low-hanging fruit that should make statistics quicker to learn, more transparent to understand, and easier to use. As we move into the era of big data, where a basic level of statistical literacy is essential, it’s about time to get started.</p>
+<table class="simple-table style-top">
+<thead>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+Current term
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+Better term
+</div>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+chi-squared test
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+POPE<br />
+(w/ chi-squared as subscript)
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+statistically significant
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+statistically detectable?
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+Kruskal-Goodman’s gamma
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+ConDif
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+Yule’s Q
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+ConDif<br />
+(it’s essentially gamma applied to a 2x2 table)
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+Somer’s d
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+ConDif<br />
+(w/ Somer’s d as subscript)
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+Kendall’s tau
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+ConDif<br />
+(w/ Kendall’s tau as subscript)
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+<em>t</em>-test
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+StdMeanDif<br />
+(w/ Student’s t as subscript)
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+F-ratio
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+…
+</div>
+</td>
+</tr>
+<tr>
+<td style="width:50%">
+<div class="paragraph">
+…
+</div>
+</td>
+<td style="width:49%">
+<div class="paragraph">
+…
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="disqus-comments">
+      <i class="fas fa-comments"></i>
+      &nbsp;
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2018-10-28-making-statistics-make-sense/">Comment on this article</span>
+    </span>
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=Making%20Statistics%20Make%20Sense&amp;url=https%3A%2F%2Fbeta.rstudioconnect.com%2Fcontent%2F3776%2Fposts%2F2018-10-28-making-statistics-make-sense%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fbeta.rstudioconnect.com%2Fcontent%2F3776%2Fposts%2F2018-10-28-making-statistics-make-sense%2F&amp;title=Making%20Statistics%20Make%20Sense">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </span>
+  </p>
+  <script id="dsq-count-scr" src="https://ulrik-lyngs.disqus.com/count.js" async></script>
+  <div id="disqus_thread" class="hidden"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/';
+  this.page.identifier = 'posts/2018-10-28-making-statistics-make-sense/';
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://ulrik-lyngs.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+</script>
+  <p>
+    <div class="subscribe">
+<form method='post' action='https://blogtrottr.com'>
+  <p>Enjoy this blog? Get notified of new posts via email:</p>
+  <input type='text' name='btr_email' />
+  <input type='hidden' name='btr_url'
+         value='https://beta.rstudioconnect.com/content/3776/index.xml'/>
+  <input type='hidden' name='schedule_type' value='0' />
+  <input type='submit' value='Subscribe' />
+</form>
+</div>
+  </p>
+</div>
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+  <h3 id="reuse">Reuse</h3>
+  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

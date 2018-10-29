@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/about.html</loc>
+    <lastmod>2018-10-25T09:11:56+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/</loc>
+    <lastmod>2018-10-25T09:13:39+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown/</loc>
+    <lastmod>2018-10-29T08:22:45+01:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/</loc>
+    <lastmod>2018-10-29T08:49:57+01:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-ulysses-in-cyberspace/</loc>
+    <lastmod>2018-10-28T20:05:41+01:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-making-statistics-make-sense/</loc>
+    <lastmod>2018-10-29T08:16:45+01:00</lastmod>
+  </url>
+  <url>
+    <loc>https://beta.rstudioconnect.com/content/3776/posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index/</loc>
+    <lastmod>2018-10-28T19:58:20+01:00</lastmod>
+  </url>
+</urlset>

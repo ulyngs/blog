@@ -1,0 +1,35 @@
+/*hide title*/
+.posts-list-caption {
+  display: none;
+}
+
+.radix-site-header {
+  background-color: white;
+  border-bottom: 2px #e7e7e7 solid;
+}
+
+.nav-left {
+  color: #777;
+  margin-left: 10% !important;
+}
+
+.nav-right {
+  color: #777;
+  margin-right: 10% !important;
+}
+
+.nav-left .title {
+  font-size: 2.75em;
+}
+
+/* remove the citation on posts */
+.byline.grid div:nth-child(3) {
+  display: none;
+}
+
+.posts-with-sidebar {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-right: 0 !important;
+  padding-left: 18px !important;
+}
