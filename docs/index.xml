@@ -12,14 +12,14 @@
       <link>https://ulyngs.github.io/blog/</link>
     </image>
     <generator>Radix</generator>
-    <lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Oct 2018 00:00:00 +0000</lastBuildDate>
     <item>
       <title>R packages for CHI papers with R Markdown</title>
       <dc:creator>Ulrik Lyngs</dc:creator>
       <link>https://ulyngs.github.io/blog/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown</link>
       <description>In a previous blog post, I detailed at length the nitty-gritty of how one might take the ACM Master Article LaTeX templates and get them to play nicely with R Markdown. To make it super easy in practice, I created two R packages which supply easy-to-use R Markdown templates in RStudio for CHI Proceedings and CHI Extended Abstracts.</description>
       <guid>https://ulyngs.github.io/blog/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown</guid>
-      <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Oct 2018 00:00:00 +0000</pubDate>
       <media:content url="https://ulyngs.github.io/blog/posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown/preview.png" medium="image" type="image/png" width="2226" height="1748"/>
     </item>
     <item>

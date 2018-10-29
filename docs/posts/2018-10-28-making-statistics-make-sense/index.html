@@ -24,7 +24,6 @@
 <meta property="description" itemprop="description" content="For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."/>
 
 <link rel="canonical" href="https://ulyngs.github.io/blog/posts/2018-10-28-making-statistics-make-sense/"/>
-<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 <link rel="icon" type="image/jpeg" href="../../images/headshot_0.jpg"/>
 
 <!--  https://schema.org/Article -->
@@ -52,7 +51,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","date","preview","categories","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY"]},{"type":"character","attributes":{},"value":["Making Statistics Make Sense"]},{"type":"character","attributes":{},"value":["For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["02-26-2017"]},{"type":"character","attributes":{},"value":["preview.jpg"]},{"type":"character","attributes":{},"value":["statistics","usability"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2018-10-28-making-statistics-make-sense/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","categories","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Making Statistics Make Sense"]},{"type":"character","attributes":{},"value":["For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["02-26-2017"]},{"type":"character","attributes":{},"value":["preview.jpg"]},{"type":"character","attributes":{},"value":["statistics","usability"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2018-10-28-making-statistics-make-sense/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1287,6 +1286,16 @@ gtag('config', 'UA-77306155-2');
   border-bottom: 2px #e7e7e7 solid;
 }
 
+.radix-site-footer {
+  background-color: white;
+  border-top: 2px #e7e7e7 solid;
+  text-align: right;
+}
+.radix-site-footer p{
+  margin-right: 10%;
+  color: #777;
+}
+
 .nav-left {
   color: #777;
   margin-left: 10% !important;
@@ -1296,10 +1305,16 @@ gtag('config', 'UA-77306155-2');
   color: #777;
   margin-right: 10% !important;
 }
+.nav-right a:hover {
+  color: #5e5e5e;
+}
 
 .nav-left .title {
   font-size: 2.75em;
   text-transform: uppercase;
+}
+.nav-left .title:hover {
+  color: #5e5e5e;
 }
 
 .posts-with-sidebar {
@@ -1307,6 +1322,11 @@ gtag('config', 'UA-77306155-2');
   margin-right: 10%;
   padding-right: 0 !important;
   padding-left: 18px !important;
+}
+
+d-appendix {
+  padding-top: 24px !important;
+  padding-bottom: 0px !important;
 }
 </style>
 <!--/radix_placeholder_site_in_header-->
@@ -1563,12 +1583,16 @@ var disqus_config = function () {
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
-  <h3 id="reuse">Reuse</h3>
-  <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+  <h3 id="updates-and-corrections">Corrections</h3>
+  <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/ulyngs/blog/issues/new">create an issue</a> on the source repository.</p>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="radix-site-nav radix-site-footer">
+  <p>© Copyright 2018 Ulrik Lyngs</p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 

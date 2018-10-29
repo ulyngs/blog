@@ -22,7 +22,6 @@
   <title>Ulrik Lyngs: About this blog</title>
   
   
-  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
   <link rel="icon" type="image/jpeg" href="images/headshot_0.jpg"/>
   
   
@@ -1271,6 +1270,16 @@
     border-bottom: 2px #e7e7e7 solid;
   }
   
+  .radix-site-footer {
+    background-color: white;
+    border-top: 2px #e7e7e7 solid;
+    text-align: right;
+  }
+  .radix-site-footer p{
+    margin-right: 10%;
+    color: #777;
+  }
+  
   .nav-left {
     color: #777;
     margin-left: 10% !important;
@@ -1280,10 +1289,16 @@
     color: #777;
     margin-right: 10% !important;
   }
+  .nav-right a:hover {
+    color: #5e5e5e;
+  }
   
   .nav-left .title {
     font-size: 2.75em;
     text-transform: uppercase;
+  }
+  .nav-left .title:hover {
+    color: #5e5e5e;
   }
   
   .posts-with-sidebar {
@@ -1291,6 +1306,11 @@
     margin-right: 10%;
     padding-right: 0 !important;
     padding-left: 18px !important;
+  }
+  
+  d-appendix {
+    padding-top: 24px !important;
+    padding-bottom: 0px !important;
   }
   </style>
   <!--/radix_placeholder_site_in_header-->
@@ -1349,11 +1369,14 @@
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
-<h3 id="reuse">Reuse</h3>
-<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/ulyngs/blog/issues/new">create an issue</a> on the source repository.</p>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="radix-site-nav radix-site-footer">
+<p>© Copyright 2018 Ulrik Lyngs</p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
 
 </body>

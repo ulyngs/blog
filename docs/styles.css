@@ -8,6 +8,16 @@
   border-bottom: 2px #e7e7e7 solid;
 }
 
+.radix-site-footer {
+  background-color: white;
+  border-top: 2px #e7e7e7 solid;
+  text-align: right;
+}
+.radix-site-footer p{
+  margin-right: 10%;
+  color: #777;
+}
+
 .nav-left {
   color: #777;
   margin-left: 10% !important;
@@ -17,10 +27,16 @@
   color: #777;
   margin-right: 10% !important;
 }
+.nav-right a:hover {
+  color: #5e5e5e;
+}
 
 .nav-left .title {
   font-size: 2.75em;
   text-transform: uppercase;
+}
+.nav-left .title:hover {
+  color: #5e5e5e;
 }
 
 .posts-with-sidebar {
@@ -28,4 +44,9 @@
   margin-right: 10%;
   padding-right: 0 !important;
   padding-left: 18px !important;
+}
+
+d-appendix {
+  padding-top: 24px !important;
+  padding-bottom: 0px !important;
 }
