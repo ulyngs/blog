@@ -5,7 +5,7 @@ description: |
 collections:
   posts:
     disqus: ulrik-lyngs
-    share: [twitter, linkedin]
+    share: [twitter, facebook]
     #subscribe: _subscribe.html
     feed_items_max: 50
     citations: false
