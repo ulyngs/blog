@@ -44,7 +44,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output"]}},"value":[{"type":"character","attributes":{},"value":["How to Write ACM Articles with R Markdown"]},{"type":"character","attributes":{},"value":["I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["07-18-2018"]},{"type":"character","attributes":{},"value":["rmarkdown","LaTeX","reproducibility","ACM CHI"]},{"type":"character","attributes":{},"value":["preview.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output"]}},"value":[{"type":"character","attributes":{},"value":["How to Write ACM Articles with R Markdown"]},{"type":"character","attributes":{},"value":["I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["07-18-2018"]},{"type":"character","attributes":{},"value":["rmarkdown","LaTeX","reproducibility","ACM CHI"]},{"type":"character","attributes":{},"value":["preview.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -954,6 +954,23 @@
 </div>
 
 <div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#step-1.-understand-how-to-use-the-acm-latex-template-with-r-markdown">Step 1. Understand how to use (the ACM) LaTeX template with R Markdown</a></li>
+<li><a href="#step-2.-adjust-the-latex-template-to-include-your-content">Step 2. Adjust the LaTeX template to include your content</a></li>
+<li><a href="#step-3.-make-sure-citations-are-shown-correctly">Step 3. Make sure citations are shown correctly</a></li>
+<li><a href="#step-4.-handling-figures">Step 4. Handling figures</a><ul>
+<li><a href="#two-column-figures">Two-column figures</a></li>
+</ul></li>
+<li><a href="#step-5.-handling-tables">Step 5. Handling tables</a><ul>
+<li><a href="#two-column-tables">Two-column tables</a></li>
+</ul></li>
+<li><a href="#step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</a></li>
+<li><a href="#step-7.-celebrate">Step 7. Celebrate!</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
 <p><em>NOTE: After writing this post, I <a href="https://ulriklyngs.com/blog/r-packages-for-chi-papers-with-r-markdown">created two R packages</a> which add R Markdown templates for <a href="https://github.com/ulyngs/chi-proc-rmd-template">CHI Proceedings</a> and <a href="https://github.com/ulyngs/chi-ea-rmd-template">CHI Extended Abstract</a> manuscript to RStudio. They implement the steps detailed in this post (and more) and provide examples within the sample content.</em></p>
 <p>I love <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown</a>. I use R for almost all my data analyses and visualisations, and Rmd files help me keep an interactive lab notebook of the steps I took while making it quick and easy to reproduce everything.</p>
 <p>Like many others (e.g. <a href="https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/">here</a>, <a href="https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/">here</a>, and <a href="https://github.com/benmarwick/huskydown">here</a>), I plan to write my PhD thesis in R Markdown. I also want to use R Markdown when writing submissions to academic conferences and journals (cf. <a href="https://colinbousige.github.io/post/rmarkdown/">this wonderful blog post by Colin Bousige</a>).</p>
@@ -961,7 +978,7 @@
 <p>In my research group, one of the most important outlets for our work is <a href="https://sigchi.org/conferences/conference-history/chi/">ACM CHI (Conference on Human Factors in Computing Systems)</a>. However, I spent numerous frustrated hours wrapping my head around how to get R Markdown to play nicely with the ACM CHI LaTeX template. RStudio makes the <a href="https://github.com/rstudio/rticles"><code>rticles</code> package</a> with templates to format R Markdown documents to the submission standards of lots of academic journals and conferences, including a <a href="https://github.com/rstudio/rticles/tree/master/inst/rmarkdown/templates/acm_article">generic ACM template</a>. But the outputted result when I used rticles didn’t seem to correspond exactly to the official ACM LaTeX templates, and it wasn’t obvious to me which publication templates the rticle templates were derived from in the first place (many of the rticle templates are crowd-contributed and does not seem to come with any documentation).</p>
 <p>Besides, for next CHI, ACM have updated the latex templates (at the time of writing, the most recent update to the master templates was on July 17, 2018). Sigh. So the question I set out to answer is: <strong>What is the route of least effort for using R Markdown to write articles for CHI, using the ACM’s own LaTeX templates in a transparent fashion?</strong></p>
 <p>Turns out the answer is simple, but it took me way longer to figure out that it should have done, as I couldn’t quite find the right advice online. Hopefully this post will save you time, if you find yourself in the same situation as me. <strong>Here’s how to do it:</strong></p>
-<h2 id="step-1.-understand-how-to-use-the-acm-latex-template-with-r-markdown">Step 1. Understand how to use (the ACM) LaTeX template with R Markdown</h2>
+<h1 id="step-1.-understand-how-to-use-the-acm-latex-template-with-r-markdown">Step 1. Understand how to use (the ACM) LaTeX template with R Markdown</h1>
 <p><em>Note: I’ll assume you’re using RStudio for this tutorial</em></p>
 <p>To use the ACM article template, we’d normally download the latest version <a href="https://www.acm.org/publications/proceedings-template">from here</a>. For the purposes of this tutorial, however, clone or download <a href="https://github.com/ulyngs/acm-articles-rmd">this GitHub repo</a> which I set up with just the files you need to follow along and understand how things work. Open the R Project file in the repo’s root folder. Now let’s have a look at the files in the <strong>step1</strong> folder:</p>
 <p><img class="img-responsive" alt="Step 1 files" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step1-files.png"></p>
@@ -974,7 +991,7 @@
 <li>the others are supporting files for the sample content in the template - images (files.eps, fly.eps, rosette.eps, and sampleteaser.pdf), bibliography (sample-bibliography.bib), and sample content (samplebody-conf.tex)</li>
 </ul>
 <p>Now, if you open step1.Rmd, you will see that the only thing you need to include in an Rmd file to use an arbitrary LaTeX template (in this case the CHI template) is the following <a href="https://bookdown.org/yihui/rmarkdown/basics.html">YAML header</a>:</p>
-<pre class="markdown"><code>
+<pre class="yaml"><code>
 ---
 output:
     bookdown::pdf_book:
@@ -983,7 +1000,7 @@ output:
 <p>(Note I use <code>bookdown::pdf_book:</code> as output instead of simply <code>pdf_document</code>. This is because <a href="https://bookdown.org/yihui/rmarkdown/books.html">bookdown</a> extends the referencing capability of R Markdown, so that we can reference figures with a syntax that also works when exporting to other formats than LaTeX/PDF.)</p>
 <p>If you click ‘Knit’, the CHI proceedings template with sample content should compile to this pdf (if you get an error message, its probably for <a href="https://github.com/jgm/pandoc/issues/970">this reason</a>):</p>
 <p><img class="img-responsive" alt="Step 1 compiled to pdf" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step1-compiled.png"></p>
-<h2 id="step-2.-adjust-the-latex-template-to-include-your-content">Step 2. Adjust the LaTeX template to include your content</h2>
+<h1 id="step-2.-adjust-the-latex-template-to-include-your-content">Step 2. Adjust the LaTeX template to include your content</h1>
 <p>Ok, so now we know how to compile to an arbitrary template without putting in any content. How do we put in the content from our Rmd file?</p>
 <p>To do this, we need to know that <a href="https://pandoc.org">pandoc</a>, when compiling from R Markdown to LaTeX, treats content $between dollar signs$ in the LaTeX template as a variable that it should go look for in the Rmd file.</p>
 <p>So, for example, if I in <strong>sample-sigchi.tex</strong> change <code>\title{SIG Proceedings Paper in LaTeX Format}</code> to <code>\title{$title$}</code>, then pandoc will go look for the variable <code>title</code> in the YAML header of the R Markdown file and plug the content of this variable in to the LaTeX template.</p>
@@ -1011,14 +1028,14 @@ It was released as a downloadable track for Rock Band in addition to appearing a
 \hypertarget{ref-Hume1748}{}
 Hume, D. 1748. \emph{An enquiry concerning human understanding}. Edited by L. A. Selby-Bigge and P. H. Nidditch. Oxford: Clarendon Press.</code></pre>
 <p>Ahh, now things make sense. In the .tex file, the citations and references have been plugged in as plain text, instead of using the appropriate LaTeX commands. Not quite what we want! Let’s fix this.</p>
-<h2 id="step-3.-make-sure-citations-are-shown-correctly">Step 3. Make sure citations are shown correctly</h2>
+<h1 id="step-3.-make-sure-citations-are-shown-correctly">Step 3. Make sure citations are shown correctly</h1>
 <p>Turns out this is easy. Go to the YAML header and under <code>bookdown::pdf_book:</code> add (with indentation) <code>citation_package: natbib</code>. This will make use of the LaTeX natbib package to insert citations into the .tex file, instead of inserting them as plain text. Let’s knit again to see if this made a difference:</p>
 <p><img class="img-responsive" alt="Step 3 compiled to pdf" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step3-compiled.png "></p>
 <p>Yup, now it looks right. Let’s have a look at the .tex to see what’s actually going on. Now we see this around the Hume reference:</p>
 <pre class="markdown"><code>
 It was released as a downloadable track for Rock Band in addition to appearing as a playable track for Guitar Hero Live.\citep{Hume1748}</code></pre>
 <p>So citations are now correctly inserted with <code>\citep{citation-key}</code>, and the bibliography is being generated by LaTeX itself via the final calls to <code>\bibliographystyle{ACM-Reference-Format}</code> and <code>\bibliography{$bibliography$}</code> in <strong>sample-sigchi.tex</strong>. Success!</p>
-<h2 id="step-4.-handling-figures">Step 4. Handling figures</h2>
+<h1 id="step-4.-handling-figures">Step 4. Handling figures</h1>
 <p>Let’s get to the fun stuff. We want our plots to be generated straight from R and put automatically into our article, so that we can be awesome and reproducible, right?</p>
 <p>First, in our YAML header add <code>fig_caption: true</code> under <code>bookdown::pdf_book</code>. This makes sure our plots are put in a figure environment, and gives us more control over the options of this environment.</p>
 <p>Then, in our body text after the ‘History’ paragraph, add the following chunk of R code:</p>
@@ -1038,7 +1055,7 @@ plot(pressure)
 \end{figure}</code></pre>
 <p>I.e. R Markdown generates the plot, creates a subfolder and saves the plot as a graphics file in there, then includes this generated file in the .tex file with the LaTeX syntax we’d expect. Magic! (Not to mention a <strong>crucial step to automate to avoid errors in the research process</strong>!)</p>
 <p>The output also looks as we’d expect: <img class="img-responsive" alt="Step 4 compiled to column width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step4-colwidth.png"></p>
-<h3 id="two-column-figures">Two-column figures</h3>
+<h2 id="two-column-figures">Two-column figures</h2>
 <p>The acm-article template documentation tells us that to include a figure which spans two columns, we should put it in a <code>figure*</code> environment rather than a <code>figure</code> environment. How do we do this? Easy, add <code>fig.env='figure*'</code> to the chunk options:</p>
 <pre class="markdown"><code>
 ```{r two-col-tribute-plot, echo=FALSE, out.width=&#39;0.98\\textwidth&#39;, fig.cap=&quot;This is a two-column plot of how great Tribute gets over time&quot;, fig.env=&#39;figure*&#39;}
@@ -1055,7 +1072,7 @@ plot(pressure)
     \label{fig:two-col-tribute-plot}
 \end{figure*}</code></pre>
 <p>And the output looks correct (it’s floating to a new page in our case): <img class="img-responsive" alt="Step 4 compiled to full width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step4-two-colwidth.png"></p>
-<h2 id="step-5.-handling-tables">Step 5. Handling tables</h2>
+<h1 id="step-5.-handling-tables">Step 5. Handling tables</h1>
 <p>To automatically grab data from our analyses and create a table in our CHI paper, we’ll use <a href="https://bookdown.org/yihui/rmarkdown/r-code.html#tables">‘kable’</a>.</p>
 <p>For this example, let’s first load the tidyverse package. Let’s add this chunk before the introduction in our Rmd file:</p>
 <pre class="markdown"><code>
@@ -1097,7 +1114,7 @@ iris %&gt;%
 \end{table}</code></pre>
 <p>And the output looks like this: <img class="img-responsive" alt="Step 5 column width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step5-colwidth.png"></p>
 <p>Awesome! No more errors from whatever obscure means through which you’d otherwise be getting your data into a LaTeX table.</p>
-<h3 id="two-column-tables">Two-column tables</h3>
+<h2 id="two-column-tables">Two-column tables</h2>
 <p>Finally, the acm-article documentation again tells us that we can get our table to span two columns by putting it in a <code>\table*</code> rather than a <code>\table</code>environment. <del>It turns out that there’s not at the moment any easy way to do this from within R Markdown (the <code>fig.env</code> chunk option doesn’t work with tables when we use the kable function).</del></p>
 <p><em>Update 7 Aug 2018:</em> Yihui Xie, creator of knitr, <a href="https://github.com/yihui/knitr/issues/1585#issuecomment-410922084">told me</a> that this is done just as easily. We simply add <code>table.env='table*'</code> as argument to the kable function:</p>
 <pre class="markdown"><code>
@@ -1108,7 +1125,7 @@ iris %&gt;%
   knitr::kable(format = &quot;latex&quot;, booktabs = TRUE, caption = &quot;The favorite iris&#39; of Tenacious D.&quot;, table.env=&#39;table*&#39;)
 ```</code></pre>
 <p>Et voilá, our table is put in a <code>\table*</code> environment in the .tex file and now spans two columns: <img class="img-responsive" alt="Step 5 full width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step5-two-col-width.png"></p>
-<h2 id="step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</h2>
+<h1 id="step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</h1>
 <p>To finish off, how do we reference our figures and tables? Two options - the first is to simply use standard LaTeX syntax (you can use any LaTeX syntax within your Rmd file if you’re compiling it to a PDF). For example:</p>
 <pre class="markdown"><code>
 The maturation of the song over time is shown in Figure \ref{fig:col-width-tribute-plot}.</code></pre>
@@ -1116,7 +1133,7 @@ The maturation of the song over time is shown in Figure \ref{fig:col-width-tribu
 <pre class="markdown"><code>
 The maturation of the song over time is shown in Figure \@ref(fig:tribute-plot).</code></pre>
 <p>Either way, the .tex output is the same, and so is the result: <img class="img-responsive" alt="Step 6 referencing figures and tables" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step6.png"></p>
-<h2 id="step-7.-celebrate">Step 7. Celebrate!</h2>
+<h1 id="step-7.-celebrate">Step 7. Celebrate!</h1>
 <p>You now know how to use R Markdown alongside the ACM master templates. Yay for reproducible research!</p>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
