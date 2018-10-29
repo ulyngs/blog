@@ -61,7 +61,7 @@
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["preview.png","r-packages-for-chi-papers-with-r-markdown_files/bowser-1.9.3/bowser.min.js","r-packages-for-chi-papers-with-r-markdown_files/distill-2.2.21/template.v2.js","r-packages-for-chi-papers-with-r-markdown_files/jquery-1.11.3/jquery.min.js","r-packages-for-chi-papers-with-r-markdown_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["compiled.png","preview.png","r-packages-for-chi-papers-with-r-markdown_files/bowser-1.9.3/bowser.min.js","r-packages-for-chi-papers-with-r-markdown_files/distill-2.2.21/template.v2.js","r-packages-for-chi-papers-with-r-markdown_files/jquery-1.11.3/jquery.min.js","r-packages-for-chi-papers-with-r-markdown_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1361,6 +1361,12 @@ gtag('config', 'UA-77306155-2');
 <div class="d-article">
 <p>So, I previously wrote at <a href="https://ulriklyngs.com/blog/acm-articles-with-r-markdown">great length</a> about how to use the <a href="https://www.acm.org/publications/proceedings-template">ACM Master Article LaTeX templates</a> (or any other LaTeX templates) in tandem with R Markdown to write transparent and reproducible papers.</p>
 <p>To make it speedy and easy in practice specifically in relation to the <a href="https://sigchi.org">ACM CHI Conference</a>, I ended up creating two R packages which provides R Markdown templates for submissions in the latest formats for <a href="https://github.com/ulyngs/chi-proc-rmd-template">ACM CHI Proceedings</a> as well as <a href="https://github.com/ulyngs/chi-ea-rmd-template">ACM CHI Extended Abstracts</a>.</p>
+<figure>
+<img src="preview.png" alt="CHI proceedings template added to RStudio" /><figcaption>CHI proceedings template added to RStudio</figcaption>
+</figure>
+<figure>
+<img src="compiled.png" alt="Template content knitted to PDF" /><figcaption>Template content knitted to PDF</figcaption>
+</figure>
 <p>For now, these packages can be installed using the <code>devtools</code> for R:</p>
 <pre class="r"><code>
 # The package isn&#39;t on CRAN yet - install the development version from GitHub:
