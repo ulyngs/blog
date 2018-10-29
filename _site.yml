@@ -1,30 +1,27 @@
-name: "reproducible-finance-with-r"
-title: "Reproducible Finance with R"
+name: "ulrik-lyngs"
+title: "ULRIK LYNGS"
 description: |
-  Exploring reproducible finance with the R statistical computing environment.
+  A blog about technology, psychology, and data science.
 collections:
   posts:
-    disqus: reproducible-finance-with-r
+    disqus: ulrik-lyngs
     share: [twitter, linkedin]
     subscribe: _subscribe.html
+    feed_items_max: 50
+    citations: false
 creative_commons: CC BY
 base_url: https://beta.rstudioconnect.com/content/3776/
-favicon: images/favicon.png
+favicon: images/headshot_0.jpg
 google_analytics: "UA-77306155-2"
 navbar:
-  logo: images/rstudio.png
+  #logo: images/headshot_0.jpg
   right:
-    - text: "Home"
+    - text: "Posts"
       href: index.html
-    - text: "Gallery"
-      href: gallery.html
-    - text: "About"
-      href: about.html
-    - text: "Contributors"
-      href: contributors.html
+    - text: "Back to website"
+      href: https://ulriklyngs.com
     - icon: fa fa-rss
       href: index.xml
-output: radix::radix_article
-
-
-
+output: 
+  radix::radix_article:
+    css: styles.css
