@@ -1,5 +1,5 @@
 name: "ulrik-lyngs"
-title: "ULRIK LYNGS"
+title: "Ulrik Lyngs"
 description: |
   A blog about technology, psychology, and data science.
 collections:
@@ -18,7 +18,7 @@ navbar:
   right:
     - text: "Posts"
       href: index.html
-    - text: "Back to website"
+    - text: "Back to main site"
       href: https://ulriklyngs.com
     - icon: fa fa-rss
       href: index.xml

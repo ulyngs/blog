@@ -20,11 +20,7 @@
 
 .nav-left .title {
   font-size: 2.75em;
-}
-
-/* remove the citation on posts */
-.byline.grid div:nth-child(3) {
-  display: none;
+  text-transform: uppercase;
 }
 
 .posts-with-sidebar {
