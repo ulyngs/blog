@@ -10,7 +10,7 @@ collections:
     feed_items_max: 50
     citations: false
 creative_commons: CC BY
-base_url: https://beta.rstudioconnect.com/content/3776/
+base_url: https://ulyngs.github.io/blog/
 favicon: images/headshot_0.jpg
 google_analytics: "UA-77306155-2"
 navbar:
