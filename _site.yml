@@ -13,7 +13,7 @@ collections:
 repository_url: https://github.com/ulyngs/blog/
 base_url: https://ulyngs.github.io/blog/
 favicon: images/headshot_0.jpg
-google_analytics: "UA-77306155-2"
+google_analytics: "UA-84972342-3"
 navbar:
   #logo: images/headshot_0.jpg
   right:
