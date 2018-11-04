@@ -54,7 +54,7 @@ Choose where to save the project - let's just save on the desktop for the purpos
 
 Now we see the created template app open in Xcode.
 
-![Template project open i Xcode](images/5_xcode_project.png)
+![Template project open in Xcode](images/5_xcode_project.png)
 
 
 # Step 3: Add a Safari Extension 'target' to the app
@@ -94,6 +94,7 @@ You now see that a folder called 'Facebook Minimiser Extension' has been added t
 If you click the 'play' triangle icon in the top left, the app will again be built and run.
 
 Apple tells us that
+
 > When you build your app, Xcode builds your Safari App Extension first, then embeds it inside the finished app bundle. As soon as your app runs, your extension is ready for use in Safari.
 
 Let's go over to Safari, then choose Safari > Preferences. Click the 'Extensions' pane.
