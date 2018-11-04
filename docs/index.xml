@@ -17,7 +17,7 @@
       <title>How to Build Safari App Extensions</title>
       <dc:creator>Ulrik Lyngs</dc:creator>
       <link>https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions</link>
-      <description>Apple is transitioning traditional Safari Extensions towards 'Safari App Extensions' which have to be built using Xcode. However, I couldn't find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here's a tutorial to help others who find themselves in the same situation.</description>
+      <description>Apple is deprecating traditional Safari Extensions in favor of 'Safari App Extensions' which have to be built using Xcode. However, I couldn't find any tutorials walking through a basic example of how to build extensions for Safari in this way, which made it slow and painful when I wanted to convert a simple extension for Facebook into a Safari App Extension. Here's a tutorial to help others in the same situation.</description>
       <guid>https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions</guid>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       <media:content url="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/images/10_add_safari_ext.png" medium="image" type="image/png" width="1634" height="1223"/>
