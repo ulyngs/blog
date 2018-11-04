@@ -19,48 +19,48 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-<title>Ulrik Lyngs: How to Write ACM Articles with R Markdown</title>
+<title>Ulrik Lyngs: How to Build Safari App Extensions</title>
 
-<meta property="description" itemprop="description" content="I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here&#39;s a tutorial explaining how to write CHI articles in R Markdown using ACM&#39;s new article template."/>
+<meta property="description" itemprop="description" content="Apple is transitioning traditional Safari Extensions towards &#39;Safari App Extensions&#39; which have to be built using Xcode. However, I couldn&#39;t find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here&#39;s a tutorial to help others who find themselves in the same situation."/>
 
-<link rel="canonical" href="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/"/>
+<link rel="canonical" href="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/"/>
 <link rel="icon" type="image/jpeg" href="../../images/headshot_0.jpg"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2018-07-18"/>
-<meta property="article:created" itemprop="dateCreated" content="2018-07-18"/>
+<meta property="article:published" itemprop="datePublished" content="2018-11-02"/>
+<meta property="article:created" itemprop="dateCreated" content="2018-11-02"/>
 <meta name="article:author" content="Ulrik Lyngs"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Ulrik Lyngs: How to Write ACM Articles with R Markdown"/>
+<meta property="og:title" content="Ulrik Lyngs: How to Build Safari App Extensions"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here&#39;s a tutorial explaining how to write CHI articles in R Markdown using ACM&#39;s new article template."/>
-<meta property="og:url" content="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/"/>
-<meta property="og:image" content="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/preview.png"/>
-<meta property="og:image:width" content="2880"/>
-<meta property="og:image:height" content="1800"/>
+<meta property="og:description" content="Apple is transitioning traditional Safari Extensions towards &#39;Safari App Extensions&#39; which have to be built using Xcode. However, I couldn&#39;t find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here&#39;s a tutorial to help others who find themselves in the same situation."/>
+<meta property="og:url" content="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/"/>
+<meta property="og:image" content="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/images/10_add_safari_ext.png"/>
+<meta property="og:image:width" content="1634"/>
+<meta property="og:image:height" content="1223"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Ulrik Lyngs"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Ulrik Lyngs: How to Write ACM Articles with R Markdown"/>
-<meta property="twitter:description" content="I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here&#39;s a tutorial explaining how to write CHI articles in R Markdown using ACM&#39;s new article template."/>
-<meta property="twitter:url" content="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/"/>
-<meta property="twitter:image" content="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/preview.png"/>
-<meta property="twitter:image:width" content="2880"/>
-<meta property="twitter:image:height" content="1800"/>
+<meta property="twitter:title" content="Ulrik Lyngs: How to Build Safari App Extensions"/>
+<meta property="twitter:description" content="Apple is transitioning traditional Safari Extensions towards &#39;Safari App Extensions&#39; which have to be built using Xcode. However, I couldn&#39;t find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here&#39;s a tutorial to help others who find themselves in the same situation."/>
+<meta property="twitter:url" content="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/"/>
+<meta property="twitter:image" content="https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/images/10_add_safari_ext.png"/>
+<meta property="twitter:image:width" content="1634"/>
+<meta property="twitter:image:height" content="1223"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to Write ACM Articles with R Markdown"]},{"type":"character","attributes":{},"value":["I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["07-18-2018"]},{"type":"character","attributes":{},"value":["rmarkdown","LaTeX","reproducibility","ACM CHI"]},{"type":"character","attributes":{},"value":["preview.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to Build Safari App Extensions"]},{"type":"character","attributes":{},"value":["Apple is transitioning traditional Safari Extensions towards 'Safari App Extensions' which have to be built using Xcode. However, I couldn't find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here's a tutorial to help others who find themselves in the same situation."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["11-02-2018"]},{"type":"character","attributes":{},"value":["browser extensions","Xcode","safari"]},{"type":"character","attributes":{},"value":["images/10_add_safari_ext.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["how-to-write-acm-articles-with-r-markdown_files/bowser-1.9.3/bowser.min.js","how-to-write-acm-articles-with-r-markdown_files/distill-2.2.21/template.v2.js","how-to-write-acm-articles-with-r-markdown_files/figure-html5/tribute-plot-1.png","how-to-write-acm-articles-with-r-markdown_files/figure-html5/two-col-tribute-plot-1.png","how-to-write-acm-articles-with-r-markdown_files/jquery-1.11.3/jquery.min.js","how-to-write-acm-articles-with-r-markdown_files/webcomponents-2.0.0/webcomponents.js","preview.png"]}
+  {"type":"character","attributes":{},"value":["how-to-build-safari-app-extensions_files/bowser-1.9.3/bowser.min.js","how-to-build-safari-app-extensions_files/distill-2.2.21/template.v2.js","how-to-build-safari-app-extensions_files/jquery-1.11.3/jquery.min.js","how-to-build-safari-app-extensions_files/webcomponents-2.0.0/webcomponents.js","images/1_FB_minimised.png","images/10_add_safari_ext.png","images/11_name_ext.png","images/12_cancel_this.png","images/13_ext_added.png","images/14_ext_missing.png","images/15_dev_menu.png","images/16_allow_unsigned.png","images/17_enable_ext.png","images/18_add_file.png","images/19_choose_type.png","images/2_create_cocoa_app.png","images/20_name_file.png","images/21_inspect_FB.png","images/22_feed_css.png","images/23_add_NSExt_ele.png","images/24_add_style_ele.png","images/25_add_to_dict.png","images/26_add_style.png","images/27_allow_FB.png","images/28_enable.png","images/29_feed_removed.png","images/3_name_project.png","images/30_FB_again.png","images/4_save_project.png","images/5_xcode_project.png","images/6_build_app.png","images/7_blank_app.png","images/8_close_app.png","images/9_add_ext_target.png","images/Screenshot 2018-11-04 at 13.46.03.png","images/Screenshot 2018-11-04 at 13.54.38.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1349,7 +1349,7 @@ d-code {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"How to Write ACM Articles with R Markdown","description":"I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2018-07-18T00:00:00.000+01:00","citationText":"Lyngs, 2018"}
+{"title":"How to Build Safari App Extensions","description":"Apple is transitioning traditional Safari Extensions towards 'Safari App Extensions' which have to be built using Xcode. However, I couldn't find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here's a tutorial to help others who find themselves in the same situation.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2018-11-02T00:00:00.000+00:00","citationText":"Lyngs, 2018"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1374,211 +1374,218 @@ d-code {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>How to Write ACM Articles with R Markdown</h1>
-<p>I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here’s a tutorial explaining how to write CHI articles in R Markdown using ACM’s new article template.</p>
+<h1>How to Build Safari App Extensions</h1>
+<p>Apple is transitioning traditional Safari Extensions towards ‘Safari App Extensions’ which have to be built using Xcode. However, I couldn’t find any tutorials walking through a basic example of how to actually build browser extensions for Safari in this way, which made it a slow and painful when I wanted to convert a simple extension I made for Facebook into a Safari App Extension. Here’s a tutorial to help others who find themselves in the same situation.</p>
 </div>
 
 <div class="d-byline">
   Ulrik Lyngs <a href="https://www.ulriklyngs.com" class="uri">https://www.ulriklyngs.com</a> 
   
-<br/>07-18-2018
+<br/>11-02-2018
 </div>
 
 <div class="d-article">
 <h3 class="d-toc-header">Table of Contents</h3>
 <nav class="d-toc" id="TOC">
 <ul>
-<li><a href="#step-1.-understand-how-to-use-the-acm-latex-template-with-r-markdown">Step 1. Understand how to use (the ACM) LaTeX template with R Markdown</a></li>
-<li><a href="#step-2.-adjust-the-latex-template-to-include-your-content">Step 2. Adjust the LaTeX template to include your content</a></li>
-<li><a href="#step-3.-make-sure-citations-are-shown-correctly">Step 3. Make sure citations are shown correctly</a></li>
-<li><a href="#step-4.-handling-figures">Step 4. Handling figures</a><ul>
-<li><a href="#two-column-figures">Two-column figures</a></li>
+<li><a href="#step-1-get-xcode">Step 1: Get Xcode</a></li>
+<li><a href="#step-2-create-a-project-in-xcode">Step 2: Create a project in Xcode</a></li>
+<li><a href="#step-3-add-a-safari-extension-target-to-the-app">Step 3: Add a Safari Extension ‘target’ to the app</a></li>
+<li><a href="#step-4-try-building-the-empty-extension-and-enable-it-in-safari">Step 4: Try building the empty extension and enable it in Safari</a></li>
+<li><a href="#step-5-injecting-a-style-sheet">Step 5: Injecting a style sheet</a><ul>
+<li><a href="#create-the-style-sheet-file">Create the style sheet file</a></li>
+<li><a href="#include-this-style-sheet-file-in-the-extensions-info.plist-file">Include this style sheet file in the extension’s <strong>Info.plist</strong> file</a></li>
+<li><a href="#set-which-websites-should-be-targeted">Set which websites should be targeted</a></li>
 </ul></li>
-<li><a href="#step-5.-handling-tables">Step 5. Handling tables</a><ul>
-<li><a href="#two-column-tables">Two-column tables</a></li>
-</ul></li>
-<li><a href="#step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</a></li>
-<li><a href="#step-7.-celebrate">Step 7. Celebrate!</a></li>
+<li><a href="#step-6-tweak-the-css">Step 6: Tweak the CSS</a></li>
+<li><a href="#step-7-celebrate-almost">Step 7: Celebrate! (almost)</a></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p><em>NOTE: After writing this post, I <a href="https://ulriklyngs.com/blog/r-packages-for-chi-papers-with-r-markdown">created two R packages</a> which add R Markdown templates for <a href="https://github.com/ulyngs/chi-proc-rmd-template">CHI Proceedings</a> and <a href="https://github.com/ulyngs/chi-ea-rmd-template">CHI Extended Abstract</a> manuscript to RStudio. They implement the steps detailed in this post (and more) and provide examples within the sample content.</em></p>
-<p>I love <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown</a>. I use R for almost all my data analyses and visualisations, and Rmd files help me keep an interactive lab notebook of the steps I took while making it quick and easy to reproduce everything.</p>
-<p>Like many others (e.g. <a href="https://rosannavanhespenresearch.wordpress.com/2016/02/03/writing-your-thesis-with-r-markdown-1-getting-started/">here</a>, <a href="https://eddjberry.netlify.com/post/writing-your-thesis-with-bookdown/">here</a>, and <a href="https://github.com/benmarwick/huskydown">here</a>), I plan to write my PhD thesis in R Markdown. I also want to use R Markdown when writing submissions to academic conferences and journals (cf. <a href="https://colinbousige.github.io/post/rmarkdown/">this wonderful blog post by Colin Bousige</a>).</p>
-<p>The benefits are obvious: First, the risk of mistakes is reduced by doing the write-up in the very same file as the one which produced your plots and tables - when you update the analysis, plots and tables are automatically updated too (this <a href="https://youtu.be/s3JldKoA0zw">epic YouTube video</a> will remind you just how awesome you will then feel). Second, you save yourself effort if you usually write in LaTeX but collaborate with MS Word users, or want to turn your work into an ebook or website: From the same Rmd file, you can export to the format you need.</p>
-<p>In my research group, one of the most important outlets for our work is <a href="https://sigchi.org/conferences/conference-history/chi/">ACM CHI (Conference on Human Factors in Computing Systems)</a>. However, I spent numerous frustrated hours wrapping my head around how to get R Markdown to play nicely with the ACM CHI LaTeX template. RStudio makes the <a href="https://github.com/rstudio/rticles"><code>rticles</code> package</a> with templates to format R Markdown documents to the submission standards of lots of academic journals and conferences, including a <a href="https://github.com/rstudio/rticles/tree/master/inst/rmarkdown/templates/acm_article">generic ACM template</a>. But the outputted result when I used rticles didn’t seem to correspond exactly to the official ACM LaTeX templates, and it wasn’t obvious to me which publication templates the rticle templates were derived from in the first place (many of the rticle templates are crowd-contributed and does not seem to come with any documentation).</p>
-<p>Besides, for next CHI, ACM have updated the latex templates (at the time of writing, the most recent update to the master templates was on July 17, 2018). Sigh. So the question I set out to answer is: <strong>What is the route of least effort for using R Markdown to write articles for CHI, using the ACM’s own LaTeX templates in a transparent fashion?</strong></p>
-<p>Turns out the answer is simple, but it took me way longer to figure out that it should have done, as I couldn’t quite find the right advice online. Hopefully this post will save you time, if you find yourself in the same situation as me. <strong>Here’s how to do it:</strong></p>
-<h1 id="step-1.-understand-how-to-use-the-acm-latex-template-with-r-markdown">Step 1. Understand how to use (the ACM) LaTeX template with R Markdown</h1>
-<p><em>Note: I’ll assume you’re using RStudio for this tutorial</em></p>
-<p>To use the ACM article template, we’d normally download the latest version <a href="https://www.acm.org/publications/proceedings-template">from here</a>. For the purposes of this tutorial, however, clone or download <a href="https://github.com/ulyngs/acm-articles-rmd">this GitHub repo</a> which I set up with just the files you need to follow along and understand how things work. Open the R Project file in the repo’s root folder. Now let’s have a look at the files in the <strong>step1</strong> folder:</p>
-<p><img class="img-responsive" alt="Step 1 files" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step1-files.png"></p>
-<p>This folder contains the necessary files to compile the most recent CHI proceedings template (these files are a subset of the files in the acmart-master folder which you can download via the ACM page I linked to above):</p>
-<ul>
-<li><strong>acmart.cls</strong> provides the LaTeX class for the new ACM master template</li>
-<li><strong>acmart.pdf</strong> provides ACM’s documentation (by Boris Veytsman) for how to use this ACM template</li>
-<li><strong>ACM-Reference-Format.bst</strong> provides the bibliography formatting</li>
-<li><strong>sample-sigchi.tex</strong> provides the LaTeX template for CHI proceedings (as you can read in the documentation in acmart.pdf, however, you switch the output easily to e.g. CHI Extended Abstracts instead of CHI Proceedings, by changing only the article format argument within this .tex)</li>
-<li>the others are supporting files for the sample content in the template - images (files.eps, fly.eps, rosette.eps, and sampleteaser.pdf), bibliography (sample-bibliography.bib), and sample content (samplebody-conf.tex)</li>
-</ul>
-<p>Now, if you open step1.Rmd, you will see that the only thing you need to include in an Rmd file to use an arbitrary LaTeX template (in this case the CHI template) is the following <a href="https://bookdown.org/yihui/rmarkdown/basics.html">YAML header</a>:</p>
-<pre class="yaml"><code>
----
-output:
-    bookdown::pdf_book:
-        template: sample-sigchi.tex
----</code></pre>
-<p>(Note I use <code>bookdown::pdf_book:</code> as output instead of simply <code>pdf_document</code>. This is because <a href="https://bookdown.org/yihui/rmarkdown/books.html">bookdown</a> extends the referencing capability of R Markdown, so that we can reference figures with a syntax that also works when exporting to other formats than LaTeX/PDF.)</p>
-<p>If you click ‘Knit’, the CHI proceedings template with sample content should compile to this pdf (if you get an error message, its probably for <a href="https://github.com/jgm/pandoc/issues/970">this reason</a>):</p>
-<p><img class="img-responsive" alt="Step 1 compiled to pdf" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step1-compiled.png"></p>
-<h1 id="step-2.-adjust-the-latex-template-to-include-your-content">Step 2. Adjust the LaTeX template to include your content</h1>
-<p>Ok, so now we know how to compile to an arbitrary template without putting in any content. How do we put in the content from our Rmd file?</p>
-<p>To do this, we need to know that <a href="https://pandoc.org">pandoc</a>, when compiling from R Markdown to LaTeX, treats content $between dollar signs$ in the LaTeX template as a variable that it should go look for in the Rmd file.</p>
-<p>So, for example, if I in <strong>sample-sigchi.tex</strong> change <code>\title{SIG Proceedings Paper in LaTeX Format}</code> to <code>\title{$title$}</code>, then pandoc will go look for the variable <code>title</code> in the YAML header of the R Markdown file and plug the content of this variable in to the LaTeX template.</p>
-<p>So we have a choice: We could go all the way and use variables to put <em>all of the meta data and LaTeX settings for the paper into the YAML header</em>, kinda what I think the <a href="https://github.com/rstudio/rticles">‘rticles’ package</a> intends to do.</p>
-<p>I begun doing this myself, but concluded that <strong>this is a terrible idea</strong>, because we then must keep on top of the detail of all changes that might be made in the future to the ACM LaTeX template to avoid things breaking. What we will do instead, is make <strong>minimal changes</strong> that just allow us to plug in the body text from the R Markdown document, so that we can reuse the hard work we put in to writing this body text in R Markdown elsewhere. For convenience, we might also want to use variables to plug in the title, abstract, and bibliography file path straight from the Rmd file. If the ACM LaTeX template changes in the future, then we’ll just adjust the latest template with these minimal changes to make it work again.</p>
-<p>In other words, I concluded that the route of least effort is to do the following:</p>
-<ol type="1">
-<li><p>Plug in paper title from the YAML header (in sample-sigchi.tex change <code>\title{SIG Proceedings Paper in LaTeX Format}</code> to <code>\title{$title$}</code>and in the Rmd file add something like this to the YAML header: <code>title: This is the Greatest and Best Paper in the World (Tribute)</code></p></li>
-<li><p>Plug in bibliography file from the YAML header (in sample-sigchi.tex, change <code>\bibliography{sample-bibliography}</code> to <code>\bibliography{$bibliography$}</code>. Then add something like <code>bibliography: my-bibliography.bib</code> to the YAML header of your Rmd file.)</p></li>
-<li><p>Plug in abstract from the YAML header file (in sample-sigchi.tex, replace the text between <code>\begin{abstract}</code> and <code>\end{abstract}</code> with <code>$abstract$</code>. Then add something like <code>abstract: This is the greatest and best abstract in the world. Tribute.</code> to your YAML header.)</p></li>
-<li><p>Plug in paper content from the Rmd file body (in sample-sigchi.tex, after <code>\maketitle</code> change <code>\input{samplebody-conf}</code> to <code>$body$</code>. This will make pandoc plug in any content after the YAML header into this section)</p></li>
-</ol>
-<p>All other metadata (author names, whether you need title notes, etc.) we will just set directly in sample-sigchi.tex - it’s not worth the effort (I think) to set up variables for this in your YAML header.</p>
-<p>Let’s see what we get when we knit the result (<strong>step2/step2.Rmd</strong>):</p>
-<p><img class="img-responsive" alt="Step 2 compiled first page" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step2-compiled-page1.png"></p>
-<p>Ok, so title and abstract is plugged in correctly from the YAML header. Let’s look at page 2:</p>
-<p><img class="img-responsive" alt="Step 2 compiled second page" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step2-compiled-page2.png"></p>
-<p>Argh! The body content as a whole is input correctly, but the in-text citations are not quite formatted the way we want, nor is the reference list shown in that nice ACM style. What’s going on?</p>
-<p>If we add <code>keep_tex: true</code> in the YAML header, as an indented line under <code>bookdown::pdf_document:</code>, we can knit again and inspect the intermediary .tex file that the PDF is generated from. We might notice the following in the .tex file:</p>
+<p>I previously wrote a little browser extension for Chrome and Safari which reduces Facebook to the functionality that’s actually useful to me, by removing the newsfeed and most other things on the front page I find distracting.</p>
+<figure>
+<img src="images/1_FB_minimised.png" alt="Facebook minimised" /><figcaption>Facebook minimised</figcaption>
+</figure>
+<p>With the most recent update of Safari, however, I found that my extension was now automatically turned off everytime I closed down the browser. And I discovered that Apple has had an ongoing plan to integrate extensions to the Safari browser with the usual development of apps for Apple’s devices, instead of following Chrome, Firefox, and Edge’s more <a href="https://www.reddit.com/r/apple/comments/8onctq/psa_safari_on_macos_mojave_no_longer_supports/">interoperable approach</a> to browser extensions. At some point (and to the frustration of many - ) the only way to get a Safari extension will be by <a href="(https://appletoolbox.com/2018/08/macos-mojave-to-kill-many-safari-extensions/)">downloading it as an extension attached to an app</a> on the macOS App Store.</p>
+<p>Sigh. I kinda like using Safari rather than Chrome, mostly because Apple is putting a bigger and bigger emphasis on protecting user privacy at a time where ubiquitous tracking is the norm. <strong>LINK</strong> Unfortunately, that’s about to mean that any Safari extensions I’d like to build for myself and others demand that I build it using Apple’s IDE <em>Xcode</em>.</p>
+<p>So I tried to do that but it turned out to be really painful. Mostly because I couldn’t find a single tutorial online that just walked through a basic example. I did eventually figure things out using <a href="https://developer.apple.com/documentation/safariservices/safari_app_extensions/building_a_safari_app_extension">Apple’s documentation</a> and <a href="https://developer.apple.com/videos/play/wwdc2016/214">talks from the Safari team at WWDC</a>, but it was a frustrating experience - other users at Apple’s Developer forums <a href="https://forums.developer.apple.com/thread/109893">feel the same way</a>.</p>
+<p>So, without further ado, here’s a tutorial that walks through the simple example of how to build my Facebook minimiser as a Safari App Extension:</p>
+<h1 id="step-1-get-xcode">Step 1: Get Xcode</h1>
+<p>If you haven’t already, install Apple’s IDE <a href="https://developer.apple.com/xcode/">Xcode</a>.</p>
+<h1 id="step-2-create-a-project-in-xcode">Step 2: Create a project in Xcode</h1>
+<p>Open Xcode, create a new project, choose ‘Cocoa App’ under the macOS project templates, and click ‘next’.</p>
+<figure>
+<img src="images/2_create_cocoa_app.png" alt="Create cocoa app" /><figcaption>Create cocoa app</figcaption>
+</figure>
+<p>Give the project a name, e.g. ‘Facebook Minimiser’. Untick ‘Use Storyboards’, ‘Include Unit Tests’ and ‘Include UI Tests’, as we’ll just do a minimal example, then click ‘next’.</p>
+<figure>
+<img src="images/3_name_project.png" alt="Name project" /><figcaption>Name project</figcaption>
+</figure>
+<p>Choose where to save the project - let’s just save on the desktop for the purposes of this tutorial. Click ‘create’.</p>
+<figure>
+<img src="images/4_save_project.png" alt="Save project" /><figcaption>Save project</figcaption>
+</figure>
+<p>Now we see the created template app open in Xcode.</p>
+<figure>
+<img src="images/5_xcode_project.png" alt="Template project open i Xcode" /><figcaption>Template project open i Xcode</figcaption>
+</figure>
+<h1 id="step-3-add-a-safari-extension-target-to-the-app">Step 3: Add a Safari Extension ‘target’ to the app</h1>
+<p>If you, like me, are new to Xcode, try running the current template app by clicking the ‘play’ triangle icon in the top left. This will build and run the app:</p>
+<figure>
+<img src="images/6_build_app.png" alt="Build template app" /><figcaption>Build template app</figcaption>
+</figure>
+<p>As we haven’t added any user interface to the app, the opened application window will just be blank.</p>
+<figure>
+<img src="images/7_blank_app.png" alt="Blank template app opened" /><figcaption>Blank template app opened</figcaption>
+</figure>
+<p>Close the application again:</p>
+<figure>
+<img src="images/8_close_app.png" alt="Closing template app" /><figcaption>Closing template app</figcaption>
+</figure>
+<p>Now we add a Safari Extension <a href="https://medium.com/@andersongusmao/xcode-targets-with-multiples-build-configuration-90a575ddc687">‘target’</a> to our app. Click ‘File’ -&gt; ‘New’ -&gt; ‘Target…’: <img src="images/9_add_ext_target.png" alt="Adding extension target" /></p>
+<p>Under ‘macOS’, choose ‘Safari Extension’ then click ‘next’.</p>
+<figure>
+<img src="images/10_add_safari_ext.png" alt="Choosing Safari Extension template" /><figcaption>Choosing Safari Extension template</figcaption>
+</figure>
+<p>Give the extension a name, e.g. ‘Facebook Minimiser Extension’ and click ‘Finish’.</p>
+<figure>
+<img src="images/11_name_ext.png" alt="Name extension target" /><figcaption>Name extension target</figcaption>
+</figure>
+<p>When Xcode asks whether it should ‘Activate “Facebook Minimiser Extension” scheme?’, click ‘cancel’.</p>
+<p><img src="images/12_cancel_this.png" /></p>
+<p>You now see that a folder called ‘Facebook Minimiser Extension’ has been added to the project:</p>
+<figure>
+<img src="images/13_ext_added.png" alt="Extension added" /><figcaption>Extension added</figcaption>
+</figure>
+<h1 id="step-4-try-building-the-empty-extension-and-enable-it-in-safari">Step 4: Try building the empty extension and enable it in Safari</h1>
+<p>If you click the ‘play’ triangle icon in the top left, the app will again be built and run.</p>
+<p>Apple tells us that &gt; When you build your app, Xcode builds your Safari App Extension first, then embeds it inside the finished app bundle. As soon as your app runs, your extension is ready for use in Safari.</p>
+<p>Let’s go over to Safari, then choose Safari &gt; Preferences. Click the ‘Extensions’ pane.</p>
+<figure>
+<img src="images/14_ext_missing.png" alt="Safari preferences extensions pane" /><figcaption>Safari preferences extensions pane</figcaption>
+</figure>
+<p>Uh-oh - where’s our extension? Turns out that unless we sign our extension with a developer certificate, it won’t automatically show up. If you haven’t already done so, click the ‘Advanced’ pane, then toggle on ‘Show Develop menu in menu bar’.</p>
+<figure>
+<img src="images/15_dev_menu.png" alt="Adding Develop menu" /><figcaption>Adding Develop menu</figcaption>
+</figure>
+<p>Now click ‘Develop’ in the menu bar, then click ‘Allow Unsigned Extensions’ and type in your password.</p>
+<figure>
+<img src="images/16_allow_unsigned.png" alt="Allowing unsigned extensions" /><figcaption>Allowing unsigned extensions</figcaption>
+</figure>
+<p>Hooray, now our extension shows up! If we tick to enable it, we see its icon show up in the toolbar:</p>
+<figure>
+<img src="images/17_enable_ext.png" alt="Enabling the extensions" /><figcaption>Enabling the extensions</figcaption>
+</figure>
+<h1 id="step-5-injecting-a-style-sheet">Step 5: Injecting a style sheet</h1>
+<h2 id="create-the-style-sheet-file">Create the style sheet file</h2>
+<p>The extension doesn’t do anything yet. Go back to Xcode, then create a new file by right-clicking the ‘Facebook Minimiser Extension’:</p>
+<figure>
+<img src="images/18_add_file.png" alt="Adding file" /><figcaption>Adding file</figcaption>
+</figure>
+<p>Select ‘Empty’ and click ‘next’:</p>
+<figure>
+<img src="images/19_choose_type.png" alt="Choosing file type" /><figcaption>Choosing file type</figcaption>
+</figure>
+<p>Let’s name our stylesheet <strong>style.css</strong>, set the target to ‘Facebook Minimiser Extension’, then click ‘create’:</p>
+<figure>
+<img src="images/20_name_file.png" alt="Naming file and choosing target" /><figcaption>Naming file and choosing target</figcaption>
+</figure>
+<p>As an initial test, let’s hide the news feed. If we go to Safari, navigate to Facebook.com, right click on the web page and select ‘Inspect Element’, we can see the (slightly odd) id given to the news feed.</p>
+<figure>
+<img src="images/21_inspect_FB.png" alt="Inspecting Facebook HTML" /><figcaption>Inspecting Facebook HTML</figcaption>
+</figure>
+<p>Go back to Xcode and add this CSS code to <strong>style.css</strong>:</p>
 <pre class="markdown"><code>
-(...) appearing as a playable track for Guitar Hero Live.(Hume 1748)</code></pre>
-<p>and in the part containing the references:</p>
-<pre class="markdown"><code>
-\hypertarget{ref-Hume1748}{}
-Hume, D. 1748. \emph{An enquiry concerning human understanding}. Edited by L. A. Selby-Bigge and P. H. Nidditch. Oxford: Clarendon Press.</code></pre>
-<p>Ahh, now things make sense. In the .tex file, the citations and references have been plugged in as plain text, instead of using the appropriate LaTeX commands. Not quite what we want! Let’s fix this.</p>
-<h1 id="step-3.-make-sure-citations-are-shown-correctly">Step 3. Make sure citations are shown correctly</h1>
-<p>Turns out this is easy. Go to the YAML header and under <code>bookdown::pdf_book:</code> add (with indentation) <code>citation_package: natbib</code>. This will make use of the LaTeX natbib package to insert citations into the .tex file, instead of inserting them as plain text. Let’s knit again to see if this made a difference:</p>
-<p><img class="img-responsive" alt="Step 3 compiled to pdf" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step3-compiled.png "></p>
-<p>Yup, now it looks right. Let’s have a look at the .tex to see what’s actually going on. Now we see this around the Hume reference:</p>
-<pre class="markdown"><code>
-(...) appearing as a playable track for Guitar Hero Live.\citep{Hume1748}</code></pre>
-<p>So citations are now correctly inserted with <code>\citep{citation-key}</code>, and the bibliography is being generated by LaTeX itself via the final calls to <code>\bibliographystyle{ACM-Reference-Format}</code> and <code>\bibliography{$bibliography$}</code> in <strong>sample-sigchi.tex</strong>. Success!</p>
-<h1 id="step-4.-handling-figures">Step 4. Handling figures</h1>
-<p>Let’s get to the fun stuff. We want our plots to be generated straight from R and put automatically into our article, so that we can be awesome and reproducible, right?</p>
-<p>First, in our YAML header add <code>fig_caption: true</code> under <code>bookdown::pdf_book</code>. This makes sure our plots are put in a figure environment, and gives us more control over the options of this environment.</p>
-<p>Then, in our body text after the ‘History’ paragraph, add the following chunk of R code:</p>
-<pre class="markdown"><code>
-```{r tribute-plot, echo=FALSE, out.width=&#39;0.98\\columnwidth&#39;, fig.cap=&quot;This is a column-width plot of how great Tribute gets over time&quot;}
+#topnews_main_stream_408239535924329
+{
+    display: none !important;
+}</code></pre>
+<figure>
+<img src="images/22_feed_css.png" alt="Updating style.css to hide news feed" /><figcaption>Updating style.css to hide news feed</figcaption>
+</figure>
+<h2 id="include-this-style-sheet-file-in-the-extensions-info.plist-file">Include this style sheet file in the extension’s <strong>Info.plist</strong> file</h2>
+<aside>
+The <strong>Info.plist</strong> file is quite similar to the <strong>manifest.json</strong> file used in Chrome extensions.
+</aside>
+<p>In the ‘Facebook Minimiser Extension’ folder, click the **Info.plist* file. Expand the ‘NSExtension’ element and click the plus icon to add a new element.</p>
+<figure>
+<img src="images/23_add_NSExt_ele.png" alt="Add element to NSExtension in Info.plist" /><figcaption>Add element to NSExtension in <strong>Info.plist</strong></figcaption>
+</figure>
+<p>Name this element ‘SFSafariStyleSheet’ and set its type to ‘Array’. Expand this element and click the plus icon to add a new element.</p>
+<figure>
+<img src="images/24_add_style_ele.png" alt="Specify array ‘SFSafariStyleSheet’" /><figcaption>Specify array ‘SFSafariStyleSheet’</figcaption>
+</figure>
+<p>Set the type of this element to ‘Dictionary’, expand it and click the plus icon to add a new element.</p>
+<figure>
+<img src="images/25_add_to_dict.png" alt="Set to dictionary and add element" /><figcaption>Set to dictionary and add element</figcaption>
+</figure>
+<p>Name this element ‘Style Sheet’, keep its type ‘String’, and give it the value ‘style.css’.</p>
+<figure>
+<img src="images/26_add_style.png" alt="Point to our style sheet" /><figcaption>Point to our style sheet</figcaption>
+</figure>
+<h2 id="set-which-websites-should-be-targeted">Set which websites should be targeted</h2>
+<p>Finally, expand the ‘SFSafariWebsiteAccess’ element and set the ‘Item 0’ element under ‘Allowed Domains’ to ’*.facebook.com’.</p>
+<figure>
+<img src="images/27_allow_FB.png" alt="Inject only on Facebook" /><figcaption>Inject only on Facebook</figcaption>
+</figure>
+<p>Now, if we rebuild our app and activate the extension in Safari, we will see the news feed has been hidden: <img src="images/28_enable.png" alt="Enable extension" /> <img src="images/29_feed_removed.png" alt="News feed removed" /></p>
+<h1 id="step-6-tweak-the-css">Step 6: Tweak the CSS</h1>
+<p>Finally, let’s tweak the content of style.css to our liking, and build my Facebook Minimiser:</p>
+<pre class="css"><code>
+/* ELEMENTS TO REMOVE FROM DISPLAY */
+#pagelet_ego_pane, /* recommended for you and sponsored content */
+#u_0_1t, /* right side bar instant chat people online */
+#u_0_1u, /* right side bar instant chat prompt */
+#u_0_1v, /* right side bar instant chat prompt */
+#pagelet_rhc_footer, /* select language prompt, and Facebook copyright footer */ 
+#createNav, /* create shortcut on the bottom left */
+#appsNav, /* explore bar on the left */
+#pagelet_trending_tags_and_topics, /* trending topics */
+#stories_pagelet_rhc, /* stories */
+#topnews_main_stream_408239535924329, /* newsfeed */
+.fbChatSidebarBody,
+#u_0_1w,
+#pagelet_gaming_destination_rhc, /*gaming sidebar*/
+#pagelet_marketplace_new_user_top_picks_rhc /*market place sidebar*/
+{
+    display: none !important;
+}
 
-plot(pressure)
+/* remove border from where the chat sidebar was */
+.fbChatSidebar {
+    border-left: none !important;
+}
 
-```</code></pre>
-<p>For new initiates, <code>```</code> means we want a code chunk, and chunk options are in between <code>{ }</code>. <code>r</code> means this chunk contains R code, <code>tribute-plot</code> is the figure label, <code>echo=FALSE</code> says we don’t want to output the code itself, only its output, <code>out.width='0.98\\columnwidth'</code> says we want to restrict the size of the plot to 98% of the width of a column (if you delete this option the plot gets way too big; and note that we must escape the <code>\</code> with another <code>\</code>), and <code>fig.cap=</code> is followed by a figure caption.</p>
-<p>If we knit and inspect the generated .tex file, we can see that this chunk was translated into this corresponding LaTeX:</p>
-<pre class="latex"><code>
-\begin{figure}
-    \includegraphics[width=0.98\columnwidth]{step4_files/figure-latex/tribute-plot-1} 
-    \caption{This is a column-width plot of how great Tribute gets over time}
-    \label{fig:tribute-plot}
-\end{figure}</code></pre>
-<p>I.e. R Markdown generates the plot, creates a subfolder and saves the plot as a graphics file in there, then includes this generated file in the .tex file with the LaTeX syntax we’d expect. Magic! (Not to mention a <strong>crucial step to automate to avoid errors in the research process</strong>!)</p>
-<p>The output also looks as we’d expect: <img class="img-responsive" alt="Step 4 compiled to column width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step4-colwidth.png"></p>
-<h2 id="two-column-figures">Two-column figures</h2>
-<p>The acm-article template documentation tells us that to include a figure which spans two columns, we should put it in a <code>figure*</code> environment rather than a <code>figure</code> environment. How do we do this? Easy, add <code>fig.env='figure*'</code> to the chunk options:</p>
-<pre class="markdown"><code>
-```{r two-col-tribute-plot, echo=FALSE, out.width=&#39;0.98\\textwidth&#39;, fig.cap=&quot;This is a two-column plot of how great Tribute gets over time&quot;, fig.env=&#39;figure*&#39;}
-
-plot(pressure)
-
-```</code></pre>
-<p>(Note also that I changed the output width to <code>out.width='0.98\\textwidth</code>; otherwise the plot width would still be 98% of a column even though it was spanning two columns.)</p>
-<p>If we inspect the .tex file, we see this code chunk is translated into this corresponding LaTeX:</p>
-<pre class="tex"><code>
-\begin{figure*}
-    \includegraphics[width=0.98\textwidth]{step4_files/figure-latex/two-col-tribute-plot-1} 
-    \caption{This is a two-column plot of how great Tribute gets over time}
-    \label{fig:two-col-tribute-plot}
-\end{figure*}</code></pre>
-<p>And the output looks correct (it’s floating to a new page in our case): <img class="img-responsive" alt="Step 4 compiled to full width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step4-two-colwidth.png"></p>
-<h1 id="step-5.-handling-tables">Step 5. Handling tables</h1>
-<p>To automatically grab data from our analyses and create a table in our CHI paper, we’ll use <a href="https://bookdown.org/yihui/rmarkdown/r-code.html#tables">‘kable’</a>.</p>
-<p>For this example, let’s first load the tidyverse package. Let’s add this chunk before the introduction in our Rmd file:</p>
-<pre class="markdown"><code>
-```{r setup, include=FALSE, message=FALSE}
-library(tidyverse)
-```</code></pre>
-<p>(<code>include=FALSE</code> means we don’t want any output from this to be included, and <code>message=FALSE</code> similarly ensures that messages that are shown when a library is loaded are not being interpreted as LaTeX commands. We simply want to load the tidyverse library.)</p>
-<p>Now, let’s include a subset of the <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris dataset</a> as a table in our article. Add this chunk after the Synopsis section:</p>
-<pre class="markdown"><code>
-```{r table-iris, echo=FALSE}
-iris %&gt;%
-  select(-Species) %&gt;%  #drop the species column
-  head(10) %&gt;%          #show just the first 10 rows
-  knitr::kable(format = &quot;latex&quot;, booktabs = TRUE, caption = &quot;The favorite iris&#39; of Tenacious D.&quot;)
-```</code></pre>
-<p>We pipe the data we want to show into the kable function from the knitr package, and specify that we want the format to be latex, that it should be formatted nicely with <code>booktabs = TRUE</code>, and we also give it a caption.</p>
-<p>If we knit and inspect the .tex, we see that the chunk has been translated into this corresponding LaTeX:</p>
-<pre class="tex"><code>
-\begin{table}
-    \caption{\label{tab:table-iris}The favorite iris&#39; of Tenacious D.}
-    \centering
-    \begin{tabular}[t]{rrrr}
-        \toprule
-        Sepal.Length &amp; Sepal.Width &amp; Petal.Length &amp; Petal.Width\\
-        \midrule
-        5.1 &amp; 3.5 &amp; 1.4 &amp; 0.2\\
-        4.9 &amp; 3.0 &amp; 1.4 &amp; 0.2\\
-        4.7 &amp; 3.2 &amp; 1.3 &amp; 0.2\\
-        4.6 &amp; 3.1 &amp; 1.5 &amp; 0.2\\
-        5.0 &amp; 3.6 &amp; 1.4 &amp; 0.2\\
-        \addlinespace
-        5.4 &amp; 3.9 &amp; 1.7 &amp; 0.4\\
-        4.6 &amp; 3.4 &amp; 1.4 &amp; 0.3\\
-        5.0 &amp; 3.4 &amp; 1.5 &amp; 0.2\\
-        4.4 &amp; 2.9 &amp; 1.4 &amp; 0.2\\
-        4.9 &amp; 3.1 &amp; 1.5 &amp; 0.1\\
-        \bottomrule
-    \end{tabular}
-\end{table}</code></pre>
-<p>And the output looks like this: <img class="img-responsive" alt="Step 5 column width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step5-colwidth.png"></p>
-<p>Awesome! No more errors from whatever obscure means through which you’d otherwise be getting your data into a LaTeX table.</p>
-<h2 id="two-column-tables">Two-column tables</h2>
-<p>Finally, the acm-article documentation again tells us that we can get our table to span two columns by putting it in a <code>\table*</code> rather than a <code>\table</code>environment. <del>It turns out that there’s not at the moment any easy way to do this from within R Markdown (the <code>fig.env</code> chunk option doesn’t work with tables when we use the kable function).</del></p>
-<p><em>Update 7 Aug 2018:</em> Yihui Xie, creator of knitr, <a href="https://github.com/yihui/knitr/issues/1585#issuecomment-410922084">told me</a> that this is done just as easily. We simply add <code>table.env='table*'</code> as argument to the kable function:</p>
-<pre class="markdown"><code>
-`r&#39;&#39;````{r table-iris-wide, echo=FALSE}
-iris %&gt;%
-  select(-Species) %&gt;%  #drop the species column
-  head(10) %&gt;%          #show just the first 10 rows
-  knitr::kable(format = &quot;latex&quot;, booktabs = TRUE, caption = &quot;The favorite iris&#39; of Tenacious D.&quot;, table.env=&#39;table*&#39;)
-```</code></pre>
-<p>Et voilá, our table is put in a <code>\table*</code> environment in the .tex file and now spans two columns: <img class="img-responsive" alt="Step 5 full width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step5-two-col-width.png"></p>
-<h1 id="step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</h1>
-<p>To finish off, how do we reference our figures and tables? Two options - the first is to simply use standard LaTeX syntax (you can use any LaTeX syntax within your Rmd file if you’re compiling it to a PDF). For example:</p>
-<pre class="markdown"><code>
-The maturation of the song over time is shown in Figure \ref{fig:col-width-tribute-plot}.</code></pre>
-<p>That’s fine, but if you want to keep the option of outputting to another format than PDF in the future, e.g. gitbook or Word, you’ll want to use bookdown’s slightly different syntax:</p>
-<pre class="markdown"><code>
-The maturation of the song over time is shown in Figure \@ref(fig:tribute-plot).</code></pre>
-<p>Either way, the .tex output is the same, and so is the result: <img class="img-responsive" alt="Step 6 referencing figures and tables" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step6.png"></p>
-<h1 id="step-7.-celebrate">Step 7. Celebrate!</h1>
-<p>You now know how to use R Markdown alongside the ACM master templates. Yay for reproducible research!</p>
+/* make the background white instead of the usual depressing grey */
+#globalContainer,
+#contentCol,
+._5vb_, 
+._5vb_ #contentCol,
+#u_0_1s,
+._4oes,
+._51x_,
+body {
+    background-color: white !important;
+}</code></pre>
+<figure>
+<img src="images/30_FB_again.png" alt="Clean, simple, distraction-free Facebook" /><figcaption>Clean, simple, distraction-free Facebook</figcaption>
+</figure>
+<h1 id="step-7-celebrate-almost">Step 7: Celebrate! (almost)</h1>
+<p>So these are the basic steps to embed a basic Safari Extension in an app using Xcode. I did find (and filed a bug report to Apple) that my extensions would at times mysteriously <a href="https://forums.developer.apple.com/thread/109893">disappear from Safari &gt; Preferences &gt; Extensions</a> - hopefully this won’t occur on your machine and/or Apple will fix this bug ASAP.</p>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
     <span class="disqus-comments">
       <i class="fas fa-comments"></i>
       &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/">Comment on this article</span>
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2018-11-02-how-to-build-safari-app-extensions/">Comment on this article</span>
     </span>
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=How%20to%20Write%20ACM%20Articles%20with%20R%20Markdown&amp;url=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-10-28-how-to-write-acm-articles-with-r-markdown%2F">
+      <a href="https://twitter.com/share?text=How%20to%20Build%20Safari%20App%20Extensions&amp;url=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-11-02-how-to-build-safari-app-extensions%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-10-28-how-to-write-acm-articles-with-r-markdown%2F">
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-11-02-how-to-build-safari-app-extensions%2F">
         <i class="fab fa-facebook"></i>
       </a>
     </span>
@@ -1587,8 +1594,8 @@ The maturation of the song over time is shown in Figure \@ref(fig:tribute-plot).
   <div id="disqus_thread" class="hidden"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/';
-  this.page.identifier = 'posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/';
+  this.page.url = 'https://ulyngs.github.io/blog/posts/2018-11-02-how-to-build-safari-app-extensions/';
+  this.page.identifier = 'posts/2018-11-02-how-to-build-safari-app-extensions/';
 };
 (function() {
   var d = document, s = d.createElement('script');
