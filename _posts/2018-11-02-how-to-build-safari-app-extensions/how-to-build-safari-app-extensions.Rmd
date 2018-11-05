@@ -16,6 +16,7 @@ output:
     self_contained: false
     toc: true
     toc_depth: 2
+    fig_caption: false
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +24,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 I previously wrote a little browser extension for Chrome and Safari that reduces Facebook to just functionality I find useful, by removing the newsfeed and most other things I find distracting on the front page.
-
 ![Facebook minimised](images/1_FB_minimised.png)
 
 With the most recent update of Safari, however, my extension was now automatically being turned off everytime I closed down the browser. And I discovered that Apple has an ongoing plan to integrate extensions to Safari with the usual development of Apple apps, instead of following the more [interoperable approach](https://www.reddit.com/r/apple/comments/8onctq/psa_safari_on_macos_mojave_no_longer_supports/) to browser extensions taken by e.g. Chrome and Firefox. At some point in the not to distant future, the only way to get a Safari extension will be by [downloading it as an extension attached to an app]((https://appletoolbox.com/2018/08/macos-mojave-to-kill-many-safari-extensions/)) on the macOS App Store.
@@ -41,52 +41,41 @@ If you haven't already, install Apple's IDE [Xcode](https://developer.apple.com/
 
 # Step 2: Create a project in Xcode
 Open Xcode, create a new project, choose 'Cocoa App' under the macOS project templates, and click 'next'.
-
 ![Create cocoa app](images/2_create_cocoa_app.png)
 
 Give the project a name, e.g. 'Facebook Minimiser'. Untick 'Use Storyboards', 'Include Unit Tests' and 'Include UI Tests', as we'll just do a minimal example, then click 'next'. 
-
 ![Name project](images/3_name_project.png)
 
 Choose where to save the project - let's just save on the desktop for this tutorial. Click 'create'.
-
 ![Save project](images/4_save_project.png)
 
-Now we see the created template app open in Xcode.
-
+Now we see the template app open in Xcode.
 ![Template project open in Xcode](images/5_xcode_project.png)
 
 
 # Step 3: Add a Safari Extension 'target' to the app
 If you, like me, are new to Xcode, try running the current template app by clicking the 'play' triangle icon in the top left. This will build and run the app:
-
 ![Build template app](images/6_build_app.png)
 
-As we haven't added any user interface to the app, the opened application window will just be blank.
-
+As we haven't added any user interface to the app, the opened application window will just be blank
 ![Blank template app opened](images/7_blank_app.png)
 
 Close the application again:
-
 ![Closing template app](images/8_close_app.png)
 
 Now we add a Safari Extension ['target'](https://medium.com/@andersongusmao/xcode-targets-with-multiples-build-configuration-90a575ddc687) to our app. Click 'File' -> 'New' -> 'Target...':
 ![Adding extension target](images/9_add_ext_target.png)
 
 Under 'macOS', choose 'Safari Extension' then click 'next'.
-
 ![Choosing Safari Extension template](images/10_add_safari_ext.png)
 
 Give the extension a name, e.g. 'Facebook Minimiser Extension' and click 'Finish'.
-
 ![Name extension target](images/11_name_ext.png)
 
 When Xcode asks whether it should 'Activate "Facebook Minimiser Extension" scheme?', click 'cancel'.
-
 ![](images/12_cancel_this.png)
 
 Now a folder called 'Facebook Minimiser Extension' has been added to the project:
-
 ![Extension added](images/13_ext_added.png)
 
 
@@ -98,43 +87,35 @@ Apple tells us that
 > When you build your app, Xcode builds your Safari App Extension first, then embeds it inside the finished app bundle. As soon as your app runs, your extension is ready for use in Safari.
 
 Let's go over to Safari, then go to Safari > Preferences. Click the 'Extensions' pane.
-
 ![Safari preferences extensions pane](images/14_ext_missing.png)
 
-Uh-oh - where's our extension? Turns out that unless we sign our extension with a developer certificate, it won't automatically appear. If you haven't already done toggled on the Development menu in Safari, go to Safari > Preferences > Advanced, then tick 'Show Develop menu in menu bar'.
-
+Uh-oh - where's our extension? Turns out that unless we sign our extension with a developer certificate, it won't automatically appear. If you haven't already turned on the Development menu in Safari, go to Safari > Preferences > Advanced, then tick 'Show Develop menu in menu bar'.
 ![Adding Develop menu](images/15_dev_menu.png)
 
-Now go to 'Develop' in the top, then click 'Allow Unsigned Extensions' and type in your password.
-
+Now go to 'Develop' in the top menu, click 'Allow Unsigned Extensions' and type in your password.
 ![Allowing unsigned extensions](images/16_allow_unsigned.png)
 
 Hooray, now our extension shows up! If we tick to enable it, we see its icon in the toolbar:
-
-![Enabling the extensions](images/17_enable_ext.png)
+![Enabling the extension](images/17_enable_ext.png)
 
 
 # Step 5: Injecting a style sheet
 ## Create the style sheet file
 The extension doesn't do anything yet. Go back to Xcode and create a new file by right-clicking the 'Facebook Minimiser Extension' folder:
-
 ![Adding file](images/18_add_file.png)
 
 Select 'Empty' and click 'next':
-
 ![Choosing file type](images/19_choose_type.png)
 
 Let's name our stylesheet **style.css**, set the target to 'Facebook Minimiser Extension', then click 'create':
-
 ![Naming file and choosing target](images/20_name_file.png)
 
-As an initial test, let's try and hide the news feed. Go to Safari, navigate to Facebook, right click on the page and select 'Inspect Element' so we can find the id or class of the element containing the feed.
-
+As an initial test, let's hide the news feed. In Safari, navigate to Facebook, right click on the page, select 'Inspect Element', and find the id or class of the element that contains the feed:
 ![Inspecting Facebook HTML](images/21_inspect_FB.png)
 
-Now go back to Xcode and add this CSS code to **style.css**:
+Now go back to Xcode and add this corresponding CSS code to **style.css**:
 
-```markdown
+```css
 #topnews_main_stream_408239535924329
 {
     display: none !important;
@@ -144,28 +125,31 @@ Now go back to Xcode and add this CSS code to **style.css**:
 ![Updating style.css to hide news feed](images/22_feed_css.png)
 
 ## Include the style sheet file in the extension's **Info.plist** file
-In the 'Facebook Minimiser Extension' folder, click the **Info.plist* file. Expand the 'NSExtension' element and click the plus icon to add a new element.
+In the 'Facebook Minimiser Extension' folder, click the **Info.plist* file. Expand the 'NSExtension' element and click the plus icon to add a new element:
 ![Add element to NSExtension in **Info.plist**](images/23_add_NSExt_ele.png)
 
 <aside>
 The **Info.plist** file is quite similar to the **manifest.json** file used in Chrome extensions.
 </aside>
 
-Name this element 'SFSafariStyleSheet' and set its type to 'Array'. Expand the element and click the plus icon to add a new element.
+Name this element 'SFSafariStyleSheet' and set its type to 'Array'. Expand the element and click the plus icon to add a new element:
 ![Specify array 'SFSafariStyleSheet'](images/24_add_style_ele.png)
 
-Set the type of this element to 'Dictionary', expand it and click the plus icon to add a new element.
+Set the type of this element to 'Dictionary', expand it and click the plus icon to add a new element:
 ![Set to dictionary and add element](images/25_add_to_dict.png)
 
-Name this element 'Style Sheet', keep its type as 'String', and give it the value 'style.css'.
+Name this element 'Style Sheet', leave its type as 'String', and give it the value 'style.css':
 ![Point to our style sheet](images/26_add_style.png)
 
 ## Set websites to target
-Finally, expand the 'SFSafariWebsiteAccess' and under 'Allowed Domains' set the 'Item 0' element's value to '*.facebook.com'.
+Finally, expand 'SFSafariWebsiteAccess' and under 'Allowed Domains' set the 'Item 0' element's value to '*.facebook.com':
 ![Inject only on Facebook](images/27_allow_FB.png)
 
-Now, if we rebuild our app and activate the extension in Safari, we will see the news feed has been hidden:
-![Enable extension](images/28_enable.png) ![News feed removed](images/29_feed_removed.png)
+Now, if we rebuild our app and activate the extension in Safari, we see the news feed has been hidden:
+
+```{r, out.width="50%"}
+knitr::include_graphics(c("images/28_enable.png", "images/29_feed_removed.png"))
+```
 
 # Step 6: Tweak the CSS
 Finally, tweak the content of style.css to build my Facebook Minimiser:
@@ -208,7 +192,11 @@ body {
 }
 ```
 
-![Clean, simple, distraction-free Facebook](images/30_FB_again.png)
+And now we get a nice, simple, and distraction free Facebook experience:
+
+```{r, layout="l-body-outset"}
+knitr::include_graphics("images/30_FB_again.png")
+```
 
 # Step 7: Celebrate! (almost)
 These are the basic steps to embed a basic Safari Extension in an app using Xcode. I did find (and filed a bug report to Apple) that in Mojave, my extensions would at times mysteriously [disappear from Safari > Preferences > Extensions](https://forums.developer.apple.com/thread/109893) - hopefully this won't occur on your machine and/or Apple will fix this bug ASAP.
