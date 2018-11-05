@@ -27,7 +27,8 @@
   color: #777;
   margin-right: 10% !important;
 }
-.nav-right a:hover {
+.nav-right a:hover,
+.radix-site-footer a:hover{
   color: #5e5e5e;
 }
 

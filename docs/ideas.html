@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="radix" />
-  <link rel="alternate" type="application/rss+xml" href="https://ulyngs.github.io/blog/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -20,27 +19,27 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>Ulrik Lyngs: Blog</title>
+  <title>Ulrik Lyngs: Untitled</title>
   
   
   <link rel="icon" type="image/jpeg" href="images/headshot_0.jpg"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Ulrik Lyngs: Blog"/>
+  <meta property="og:title" content="Ulrik Lyngs: Untitled"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Ulrik Lyngs"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Ulrik Lyngs: Blog"/>
+  <meta property="twitter:title" content="Ulrik Lyngs: Untitled"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["site","listing","title"]}},"value":[{"type":"character","attributes":{},"value":["radix::radix_website"]},{"type":"character","attributes":{},"value":["posts"]},{"type":"character","attributes":{},"value":["Blog"]}]}
+  {"type":"list","attributes":{},"value":[]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1248,10 +1247,6 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84972342-3"></script>
   <script>
@@ -1327,12 +1322,12 @@
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Blog","authors":[]}
+{"title":"Untitled","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1355,473 +1350,22 @@
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-<style type="text/css">
-
-/* Styles for listing layout (hide title) */
-.layout-listing d-title, .layout-listing .d-title {
-  display: none;
-}
-
-/* Styles for posts lists (not auto-injected) */
-
-
-.posts-with-sidebar {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
-.posts-list .description h2,
-.posts-list .description p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-}
-
-.posts-list .description h2 {
-  font-weight: 700;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.posts-list h2.post-tag {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 12px;
-}
-.posts-list {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.posts-list .post-preview {
-  text-decoration: none;
-  overflow: hidden;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 24px 0;
-}
-
-.post-preview-last {
-  border-bottom: none !important;
-}
-
-.posts-list .posts-list-caption {
-  grid-column: screen;
-  font-weight: 400;
-}
-
-.posts-list .post-preview h2 {
-  margin: 0 0 6px 0;
-  line-height: 1.2em;
-  font-style: normal;
-  font-size: 24px;
-}
-
-.posts-list .post-preview p {
-  margin: 0 0 12px 0;
-  line-height: 1.4em;
-  font-size: 16px;
-}
-
-.posts-list .post-preview .thumbnail {
-  box-sizing: border-box;
-  margin-bottom: 24px;
-  position: relative;
-  max-width: 500px;
-}
-.posts-list .post-preview img {
-  width: 100%;
-  display: block;
-}
-
-.posts-list .metadata {
-  font-size: 12px;
-  line-height: 1.4em;
-  margin-bottom: 18px;
-}
-
-.posts-list .metadata > * {
-  display: inline-block;
-}
-
-.posts-list .metadata .publishedDate {
-  margin-right: 1em;
-}
-
-.posts-list .metadata .tags {
-  margin-top: 1em;
-}
-
-.posts-list .tags .tag {
-  color: rgba(0,0,0,0.67);
-  padding: 0.3em 0.5em;
-  margin: 0;
-  font-size: 80%;
-  border: 1px solid rgba(0,0,0,0.4);
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.posts-list img {
-  opacity: 1;
-}
-
-.posts-list img[data-src] {
-  opacity: 0;
-}
-
-.posts-more {
-  clear: both;
-}
-
-
-.posts-sidebar {
-  font-size: 16px;
-}
-
-.posts-sidebar h3 {
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.sidebar-section {
-  margin-bottom: 30px;
-}
-
-.categories ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.categories li {
-  color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 0;
-}
-
-.categories li>a {
-  border-bottom: none;
-}
-
-.categories li>a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.categories .active {
-  font-weight: 600;
-}
-
-.categories .category-count {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-
-@media(min-width: 768px) {
-  .posts-list .post-preview h2 {
-    font-size: 26px;
-  }
-  .posts-list {
-    margin-top: 60px;
-  }
-  .posts-list .post-preview .thumbnail {
-    float: right;
-    width: 35%;
-    margin-bottom: 0;
-  }
-  .posts-list .post-preview .description {
-    float: left;
-    width: 45%;
-  }
-  .posts-list .post-preview .metadata {
-    float: left;
-    width: 15%;
-    margin-top: 8px;
-  }
-  .posts-list .post-preview p {
-    margin: 0 0 12px 0;
-    line-height: 1.5em;
-    font-size: 16px;
-  }
-  .posts-with-sidebar .posts-list {
-    float: left;
-    width: 72%;
-  }
-  .posts-with-sidebar .posts-sidebar {
-    float: right;
-    width: 20%;
-    margin-top: 60px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-}
-
-.downlevel .posts-list .post-preview {
-  color: inherit;
-}
-
-</style>
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace("#", "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if (category == page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption">Blog</h1>
-<a href="posts/2018-11-02-how-to-build-safari-app-extensions/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["browser extensions","Xcode","safari"]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 2, 2018</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-11-02-how-to-build-safari-app-extensions/images/10_add_safari_ext.png"/>
-</div>
-<div class="description">
-<h2>How to Build Safari App Extensions</h2>
-<p>Apple is deprecating traditional Safari Extensions in favor of 'Safari App Extensions' which have to be built using Xcode. However, I couldn't find any tutorials walking through a basic example of how to build extensions for Safari in this way, and it was therefore a slow and painful learning process when I wanted to convert a simple extension for Facebook into a Safari App Extension. Here's a tutorial to help others.</p>
-</div>
-</a>
-<a href="posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["rmarkdown","LaTeX","reproducibility","ACM CHI"]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 23, 2018</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-10-29-r-packages-for-chi-papers-with-r-markdown/preview.png"/>
-</div>
-<div class="description">
-<h2>R packages for CHI papers with R Markdown</h2>
-<p>In a previous blog post, I detailed at length the nitty-gritty of how one might take the ACM Master Article LaTeX templates and get them to play nicely with R Markdown. To make it super easy in practice, I created two R packages which supply easy-to-use R Markdown templates in RStudio for CHI Proceedings and CHI Extended Abstracts.</p>
-</div>
-</a>
-<a href="posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["rmarkdown","LaTeX","reproducibility","ACM CHI"]}</script>
-<div class="metadata">
-<div class="publishedDate">July 18, 2018</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/preview.png"/>
-</div>
-<div class="description">
-<h2>How to Write ACM Articles with R Markdown</h2>
-<p>I love R Markdown, but struggled for hours and hours to get it to play nicely with arbitrary LaTeX templates, especially for submissions to the ACM CHI conference. I cracked it in the end (I think). Here's a tutorial explaining how to write CHI articles in R Markdown using ACM's new article template.</p>
-</div>
-</a>
-<a href="posts/2018-10-28-ulysses-in-cyberspace/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["self-control","tech design"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 7, 2017</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-10-28-ulysses-in-cyberspace/preview.png"/>
-</div>
-<div class="description">
-<h2>Ulysses in Cyberspace</h2>
-<p>Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?</p>
-</div>
-</a>
-<a href="posts/2018-10-28-making-statistics-make-sense/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["statistics","usability"]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 26, 2017</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-10-28-making-statistics-make-sense/preview.jpg"/>
-</div>
-<div class="description">
-<h2>Making Statistics Make Sense</h2>
-<p>For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.</p>
-</div>
-</a>
-<a href="posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["reproducibility"]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 26, 2016</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2018-10-28-digging-science-out-of-a-hole-the-reproducibility-index/preview.jpg"/>
-</div>
-<div class="description">
-<h2>Digging Science Out of a Hole: The Reproducibility Index</h2>
-<p>Science is in trouble. We find ourselves with a mess of publications in which true findings are scattered among false positives. An unacceptably wide range of claims can be made to seem legitimate by cherrypicking the literature. We urgently need a transparent metric for the level of confidence to have in specific findings - we urgently need a 'Reproducibility Index'.</p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#ACM_CHI">ACM CHI</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#browser_extensions">browser extensions</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#LaTeX">LaTeX</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#reproducibility">reproducibility</a>
-<span class="category-count">(3)</span>
-</li>
-<li>
-<a href="#rmarkdown">rmarkdown</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#safari">safari</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#self-control">self-control</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#statistics">statistics</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#tech_design">tech design</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#usability">usability</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#Xcode">Xcode</a>
-<span class="category-count">(1)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Blog</h1>
+<h1>ideas.utf8.md</h1>
 
 </div>
 
 
 <div class="d-article">
-
+<h1 id="blog-post-ideas">Blog post ideas</h1>
+<ul>
+<li>Don’t Ask What Science Can Do For You, But What You Can Do for Science
+<ul>
+<li>about losing patience with research that starts by thinking about how to advance career instead of advancing science</li>
+</ul></li>
+<li>How to Become a Computer Scientist</li>
+</ul>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
