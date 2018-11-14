@@ -1489,7 +1489,7 @@ plot(pressure)
 <h2 id="two-column-figures">Two-column figures</h2>
 <p>The acm-article template documentation tells us that to include a figure which spans two columns, we should put it in a <code>figure*</code> environment rather than a <code>figure</code> environment. How do we do this? Easy, add <code>fig.env='figure*'</code> to the chunk options:</p>
 <pre class="markdown"><code>
-```{r two-col-tribute-plot, echo=FALSE, out.width=&#39;0.98\\textwidth&#39;, fig.cap=&quot;This is a two-column plot of how great Tribute gets over time&quot;, fig.env=&#39;figure*&#39;}
+```{r two-col-tribute-plot, fig.env=&#39;figure*&#39;, echo=FALSE, out.width=&#39;0.98\\textwidth&#39;, fig.cap=&quot;This is a two-column plot of how great Tribute gets over time&quot;}
 
 plot(pressure)
 
@@ -1553,7 +1553,7 @@ iris %&gt;%
 iris %&gt;%
   select(-Species) %&gt;%  #drop the species column
   head(10) %&gt;%          #show just the first 10 rows
-  knitr::kable(format = &quot;latex&quot;, booktabs = TRUE, caption = &quot;The favorite iris&#39; of Tenacious D.&quot;, table.env=&#39;table*&#39;)
+  knitr::kable(format = &quot;latex&quot;, table.env=&#39;table*&#39;, booktabs = TRUE, caption = &quot;The favorite iris&#39; of Tenacious D.&quot;)
 ```</code></pre>
 <p>Et voilá, our table is put in a <code>\table*</code> environment in the .tex file and now spans two columns: <img class="img-responsive" alt="Step 5 full width" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step5-two-col-width.png"></p>
 <h1 id="step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</h1>
