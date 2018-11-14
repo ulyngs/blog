@@ -163,7 +163,7 @@ The output also looks as we'd expect:
 The acm-article template documentation tells us that to include a figure which spans two columns, we should put it in a `figure*` environment rather than a `figure` environment. How do we do this? Easy, add `fig.env='figure*'` to the chunk options:
 
 ````markdown
-`r ''````{r two-col-tribute-plot, echo=FALSE, out.width='0.98\\textwidth', fig.cap="This is a two-column plot of how great Tribute gets over time", fig.env='figure*'}
+`r ''````{r two-col-tribute-plot, fig.env='figure*', echo=FALSE, out.width='0.98\\textwidth', fig.cap="This is a two-column plot of how great Tribute gets over time"}
 
 plot(pressure)
 
@@ -252,7 +252,7 @@ Finally, the acm-article documentation again tells us that we can get our table 
 iris %>%
   select(-Species) %>%  #drop the species column
   head(10) %>%          #show just the first 10 rows
-  knitr::kable(format = "latex", booktabs = TRUE, caption = "The favorite iris' of Tenacious D.", table.env='table*')
+  knitr::kable(format = "latex", table.env='table*', booktabs = TRUE, caption = "The favorite iris' of Tenacious D.")
 ```
 ````
 
