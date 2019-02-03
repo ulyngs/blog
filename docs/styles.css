@@ -53,6 +53,7 @@ d-appendix {
 }
 
 /* make code sections scroll rather than overflow, and give them a grey background */
+/* UL: 19 Nov 2018, this should've been fixed in source code now - https://github.com/rstudio/radix/commit/abbfd67146e44eb873c561cbb1fc11065788f7f8 */
 d-code {
   overflow-x: auto;
   background: #f8f8f8;

@@ -19,48 +19,48 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-<title>Ulrik Lyngs: Ulysses in Cyberspace</title>
+<title>Ulrik Lyngs: How to Create Your Own Chunk Options in R Markdown</title>
 
-<meta property="description" itemprop="description" content="Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?"/>
+<meta property="description" itemprop="description" content="What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be difficult to figure out how it works. Here&#39;s a quick guide."/>
 
-<link rel="canonical" href="https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/"/>
+<link rel="canonical" href="https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/"/>
 <link rel="icon" type="image/jpeg" href="../../images/headshot_0.jpg"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2017-06-07"/>
-<meta property="article:created" itemprop="dateCreated" content="2017-06-07"/>
+<meta property="article:published" itemprop="datePublished" content="2019-02-01"/>
+<meta property="article:created" itemprop="dateCreated" content="2019-02-01"/>
 <meta name="article:author" content="Ulrik Lyngs"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Ulrik Lyngs: Ulysses in Cyberspace"/>
+<meta property="og:title" content="Ulrik Lyngs: How to Create Your Own Chunk Options in R Markdown"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?"/>
-<meta property="og:url" content="https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/"/>
-<meta property="og:image" content="https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/preview.png"/>
-<meta property="og:image:width" content="1069"/>
-<meta property="og:image:height" content="502"/>
+<meta property="og:description" content="What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be difficult to figure out how it works. Here&#39;s a quick guide."/>
+<meta property="og:url" content="https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/"/>
+<meta property="og:image" content="https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/figures/preview.png"/>
+<meta property="og:image:width" content="709"/>
+<meta property="og:image:height" content="363"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Ulrik Lyngs"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Ulrik Lyngs: Ulysses in Cyberspace"/>
-<meta property="twitter:description" content="Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?"/>
-<meta property="twitter:url" content="https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/"/>
-<meta property="twitter:image" content="https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/preview.png"/>
-<meta property="twitter:image:width" content="1069"/>
-<meta property="twitter:image:height" content="502"/>
+<meta property="twitter:title" content="Ulrik Lyngs: How to Create Your Own Chunk Options in R Markdown"/>
+<meta property="twitter:description" content="What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be difficult to figure out how it works. Here&#39;s a quick guide."/>
+<meta property="twitter:url" content="https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/"/>
+<meta property="twitter:image" content="https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/figures/preview.png"/>
+<meta property="twitter:image:width" content="709"/>
+<meta property="twitter:image:height" content="363"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","categories","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Ulysses in Cyberspace"]},{"type":"character","attributes":{},"value":["Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["06-07-2017"]},{"type":"character","attributes":{},"value":["preview.png"]},{"type":"character","attributes":{},"value":["self-control","tech design"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","preview","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["How to Create Your Own Chunk Options in R Markdown"]},{"type":"character","attributes":{},"value":["What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be difficult to figure out how it works. Here's a quick guide."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ulrik Lyngs"]},{"type":"character","attributes":{},"value":["https://www.ulriklyngs.com"]}]}]},{"type":"character","attributes":{},"value":["02-01-2019"]},{"type":"character","attributes":{},"value":["rmarkdown","knitr","LaTeX","reproducibility"]},{"type":"character","attributes":{},"value":["figures/preview.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["preview.png"]}
+  {"type":"character","attributes":{},"value":["ACM-Reference-Format.bst","acmart.cls","chi_proc_template_v1.56_Rmd.tex","figures/my-description-1.pdf","figures/preview.png","figures/random-plot-1.pdf","figures/random-plot-no-hello-1.pdf","figures/random-plot-replaced-1.pdf","figures/unnamed-chunk-1-1.pdf","figures/unnamed-chunk-6-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/bowser-1.9.3/bowser.min.js","how-to-create-your-own-chunk-options-in-r-markdown_files/distill-2.2.21/template.v2.js","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/my-description-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/my-description-correct-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/random-plot-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/random-plot-no-hello-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/random-plot-replaced-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/unnamed-chunk-1-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/unnamed-chunk-5-1.png","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/my-description-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/my-description-correct-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-2-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-3-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-4-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-description-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-no-hello-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-replaced-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/unnamed-chunk-1-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/unnamed-chunk-5-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/unnamed-chunk-6-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/unnamed-chunk-8-1.pdf","how-to-create-your-own-chunk-options-in-r-markdown_files/jquery-1.11.3/jquery.min.js","how-to-create-your-own-chunk-options-in-r-markdown_files/webcomponents-2.0.0/webcomponents.js","how-to-create-your-own-chunk-options-in-r-markdown.pdf","how-to-create-your-own-chunk-options-in-r-markdown.tex","references.bib"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1359,7 +1359,7 @@ d-code {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Ulysses in Cyberspace","description":"Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2017-06-07T00:00:00.000+01:00","citationText":"Lyngs, 2017"}
+{"title":"How to Create Your Own Chunk Options in R Markdown","description":"What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be difficult to figure out how it works. Here's a quick guide.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-02-01T00:00:00.000+00:00","citationText":"Lyngs, 2019"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1384,35 +1384,245 @@ d-code {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Ulysses in Cyberspace</h1>
-<p>Tech companies compete to make devices that do more faster, and with less effort. Yet an entire market has emerged for apps that remove functionality from laptops and smartphones, punish people for using Facebook when they shouldn’t, or provide easy ways to visualise how much they use their devices. Do the new anti-distraction tools actually change behaviour, and what could minimally-distracting design for always-connected devices look like?</p>
+<h1>How to Create Your Own Chunk Options in R Markdown</h1>
+<p>What do you do when the chunk options you need in order to get R Markdown to output what you want is missing? You simply create the new ones you need. It is incredibly useful to be able to do so — unfortunately it can also be difficult to figure out how it works. Here’s a quick guide.</p>
 </div>
 
 <div class="d-byline">
   Ulrik Lyngs <a href="https://www.ulriklyngs.com" class="uri">https://www.ulriklyngs.com</a> 
   
-<br/>06-07-2017
+<br/>02-01-2019
 </div>
 
 <div class="d-article">
-<p><em>NOTE: This blog post was first written for the Oxford Internet Institute’s <a href="http://connectedlife.oii.ox.ac.uk">Connected Life</a> conference. Find the original post <a href="http://connectedlife.oii.ox.ac.uk/ulysses-in-cyberspace/">here</a>.</em></p>
-<p>For decades, tech companies have competed to make devices that do more faster, and with less user effort. In a current culmination of this trend, powerful smartphones have enabled us to truly do anything anywhere anytime. But a surprising opposition has emerged against the ruling wisdom that ‘convenience is king’. In the Guardian, writer <a href="https://www.theguardian.com/books/2016/dec/03/jonathan-safran-foer-technology-diminishing-us">Jonathan Safran Foer complained</a> that he “like so many people I know”, felt that constant connectivity “distracted me, made concentration more difficult … [made me check] email while giving my kids a bath”. The Economist recently ran a <a href="https://www.1843magazine.com/features/the-scientists-who-make-apps-addictive">feature on addictive apps</a>, and a whole market has emerged for apps that remove functionality from laptops and smartphones (e.g. <a href="https://freedom.to/">Freedom</a> and <a href="http://news-feed-eradicator.west.io/">Newsfeed Eradicator</a>), punish users for using Facebook when they shouldn’t (e.g. <a href="https://www.forestapp.cc/en/">Forest</a>), or provide users with easy ways to track and visualise how much they use their digital devices (e.g. <a href="https://www.rescuetime.com/">RescueTime</a>). A <a href="https://medium.com/time-dorks/the-distraction-free-iphone-or-why-im-happier-since-i-disabled-safari-80f8d525b0d8#.kzndqu22y">blog post on Medium</a> that gave advice on which apps to remove and which parental restrictions to apply to make your iPhone ‘distraction-free’ amassed hundreds of thousands of reads in a few days.</p>
-<p>Scientific research on self-regulation may explain what’s going on. As we said above, the central goal for developers has been to give users the easiest possible access to the widest amount of functionality, leaving users to exercise willpower over how they use their devices. Yet, a wealth of psychological research tells us that relying on ‘willpower’ is a <a href="http://journals.sagepub.com/doi/abs/10.1177/1745691615623247">terrible self-control strategy</a>. Empirically, the difference between people who are good, and people who are terrible, at self-control isn’t that the former have stronger ‘willpower’. Rather, people high in self-control are <a href="http://www.sciencedirect.com/science/article/pii/S0191886914005339">better at structuring their environment so that they are less exposed to temptation </a>(e.g. not keeping unhealthy foods in the house, going to a library to study, etc.). Imagine if one of your friends was attempting (and failing) to eat fewer cookies. As you try to help your friend, you discover that he brings a huge supply of cookies with him wherever he goes. You probably wouldn’t advice him to just try harder not to eat cookies. Rather, you might advice him to not always keep cookies with him, or to only keep a limited amount, or perhaps to hide away the cookies out of sight in a kitchen drawer. Yet, when it comes to digital technology, the default design is to provide instant access to all functionality imaginable, without providing easily accessible ways for users to set limits for themselves – creating a situation analogous to carrying around an infinite supply of cookies with no ability to impose restrictions.</p>
-<p>Some commenters on digital distraction suggest that people unplug, reclaim deep attention skills, and revolt against <a href="https://www.amazon.co.uk/Attention-Merchants-Scramble-Inside-Heads/dp/0385352018">malevolent ‘attention merchants’</a> who profit from making digital devices as hard to let go off as possible. I think Black Mirror-esque rhetoric should be left aside. Instead, we should see unwanted distraction from laptops and smartphones simply as a design problem. Hundreds of anti-distraction tools now exist, and they use a surprising range of strategies to help users align their actual and intended behaviour. Yet, research in human-computer interaction and psychology has focused mostly on documenting distraction from information communication technologies (ICTs), not on <a href="https://people.ucsc.edu/~swhittak/papers/meTime_CHI16.pdf">how to design against it</a>. We need a focused research effort here: Do the new anti-distraction tools actually change behaviour? Why do they do so? Which strategies are more powerful? Which strategies are promising but haven’t been explored? Such a research effort could establish best practices for non-distracting ICT design. On that basis we can then discuss how to ensure that mobile companies and app developers make it easy to configure our virtual environments in ways that help us manage our attention effectively.</p>
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#getting-a-grip-on-knit-output-hooks">Getting a grip on knit output hooks</a><ul>
+<li><a href="#the-simplest-and-stupidest-possible-thing-we-might-do">The simplest (and stupidest) possible thing we might do</a></li>
+<li><a href="#creating-a-new-chunk-option">Creating a new chunk option</a></li>
+</ul></li>
+<li><a href="#example-use-adding-description-to-latex-figure-output">Example use: Adding \Description{} to LaTeX figure output</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<p>For the <a href="http://chi2019.acm.org">2019 ACM CHI conference</a> I wanted to go all in on reproducibility and write our paper submission completely in R Markdown, and knit to PDF via the ACM’s LaTeX template. It worked in the end (the source file for our paper is <a href="https://osf.io/zyj4h/">here</a>, an R package with our template is <a href="https://github.com/ulyngs/chi-proc-rmd-template">here</a>, and a related blog post is <a href="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/">here</a>).</p>
+<p>However, one of the tricky challenges along the was that I was missing some chunk options to be able to set all the necessary parameters from R Markdown. For example, after an update to their LaTeX template, the ACM wanted figures to include a description for visually impaired readers. This was supposed to be accomplished by adding <code>\Description{This is a figure description}</code> inside the relevant figure environment in LaTeX. How to comply with this while staying within an R Markdown workflow?</p>
+<p>One option was to add descriptions manually in LaTeX as the last step before finishing the paper - that is, add <code>keep_tex: true</code> in the YAML header, then manually adjust the <strong>.tex</strong> outputted file, add descriptions in this file, and then re-generate a PDF from it. This would work but was error-prone: if I found some mistake that needed fixing in the R Markdown source file, I would need to knit again and do another manual adding of the descriptions…</p>
+<p>The right solution would be to have a chunk option ‘description’ that I could set directly in the R Markdown source file with something like `<code>```{r my_figure, description=&quot;This is a figure description&quot;}</code>, and which would then automatically add <code>\Description{This is a figure description}</code> when knitting to PDF.</p>
+<p>Fortunately, it turns out that it’s entirely possible to create new chunk options yourself! Here’s how.</p>
+<h1 id="getting-a-grip-on-knit-output-hooks">Getting a grip on knit output hooks</h1>
+<p><a href="https://yihui.name/knitr/">Knitr</a>, the package which carries out the initial part of R Markdown’s magic, provides something called ‘hooks’. These are <a href="https://yihui.name/knitr/hooks/">“customisable functions to run before/after a code chunk, tweak the output, and manipulate chunk options”</a>. We will focus on the ‘output hooks’ which can be used to customise and polish <em>raw</em> output from chunks. There are 8 types of output hooks that grab different types of output; we will modify the <code>chunk</code> output hook which grab all the output of a chunk.</p>
+<p>A chunk output hook takes the form <code>function (x, options)</code> where <code>x</code> is a character string of the output and <code>options</code> is a list of the chunk options.</p>
+<p>To modify them, do something like this:</p>
+<pre class="r"><code>
+knit_hooks$set(chunk = function(x, options) {
+  # some code to modify chunk output hooks here
+})</code></pre>
+<h2 id="the-simplest-and-stupidest-possible-thing-we-might-do">The simplest (and stupidest) possible thing we might do</h2>
+<p>As a warm-up exercise, let’s get all chunks to output “Hello, world!”.</p>
+<p>Here is a random plot:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(pressure)</code></pre>
+<div class="figure"><span id="fig:random-plot"></span>
+<img src="how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/random-plot-1.png" alt="A random plot" width="624" />
+<p class="caption">
+Figure 1: A random plot
+</p>
+</div>
+</div>
+<p>First, let’s store the current configuration of the chunk output hook, and have a look at it as well:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+(hook_chunk &lt;- knit_hooks$get(&#39;chunk&#39;))</code></pre>
+<pre><code>
+function (x, options) 
+{
+    if (is.null(options$layout)) 
+        options$layout &lt;- &quot;l-body&quot;
+    output &lt;- default_chunk_hook(x, options)
+    pad_chars &lt;- nchar(output) - nchar(sub(&quot;^ +&quot;, &quot;&quot;, output))
+    padding &lt;- paste(rep(&quot; &quot;, pad_chars), collapse = &quot;&quot;)
+    paste0(padding, &quot;&lt;div class=\&quot;layout-chunk\&quot; data-layout=\&quot;&quot;, 
+        options$layout, &quot;\&quot;&gt;\n&quot;, output, &quot;\n&quot;, padding, &quot;\n&quot;, 
+        padding, &quot;&lt;/div&gt;\n&quot;)
+}
+&lt;bytecode: 0x7ff6aa30dba8&gt;
+&lt;environment: 0x7ff6aa30c558&gt;</code></pre>
+</div>
+<p>Then we modify it:</p>
+<pre class="r"><code>
+knit_hooks$set(chunk = function(x, options) {
+  return(&quot;Hello, world!&quot;)
+})</code></pre>
+<p>Now if we try do draw the random plot again we simply get:</p>
+<pre class="r"><code>
+plot(pressure)</code></pre>
+<p>Hello, world!</p>
+<h2 id="creating-a-new-chunk-option">Creating a new chunk option</h2>
+<p>To make this minimally more useful, imagine if this only happened if we set a chunk option <code>hello</code>.</p>
+<p>Let’s first set the output hook back to what it was:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+knit_hooks$set(chunk = hook_chunk)</code></pre>
+</div>
+<p>Now let’s modify it again:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+knit_hooks$set(chunk = function(x, options) {
+  if (!is.null(options$hello)) {
+    return(&quot;Hello, world!&quot;)
+  } else {
+    return(hook_chunk(x, options))
+  }
+})</code></pre>
+</div>
+<p>Let’s check if this works. Here’s our random plot again (Figure <a href="#fig:random-plot-no-hello">2</a>):</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(pressure)</code></pre>
+<div class="figure"><span id="fig:random-plot-no-hello"></span>
+<img src="how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/random-plot-no-hello-1.png" alt="A random plot" width="624" />
+<p class="caption">
+Figure 2: A random plot
+</p>
+</div>
+</div>
+<p>And here it is with these chunk options:</p>
+<p><code>```{r, echo=TRUE, fig.cap=&quot;A random plot&quot;, hello=TRUE}</code></p>
+<p>Hello, world!</p>
+<h1 id="example-use-adding-description-to-latex-figure-output">Example use: Adding \Description{} to LaTeX figure output</h1>
+<p>Finally, let’s create an actually useful chunk option: the option to add a <code>\Description{}</code> to figures in PDF output, which is what I needed. For good measure, let’s start by resetting the chunk output hook to its original state:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+knit_hooks$set(chunk = hook_chunk)</code></pre>
+</div>
+<p>The problem we’re trying to solve is this: If we knit to PDF and set <code>keep_tex = TRUE</code> in the YAML header, we see that our random plot included in the <strong>.tex</strong> file in this way:</p>
+<pre class="latex"><code>
+\begin{figure}
+\centering
+\includegraphics{how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-1.pdf}
+\caption{A random plot}
+\end{figure}</code></pre>
+<p>What we want in our <strong>.tex</strong> file is this:</p>
+<pre class="latex"><code>
+\begin{figure}
+\centering
+\includegraphics{how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/random-plot-1.pdf}
+\Description{A scatter plot of an exponentially growing curve}
+\caption{A random plot}
+\end{figure}</code></pre>
+<p>We would like this to be done with a chunk option <code>description</code>. The approach we will take is to simply search use a <a href="https://r4ds.had.co.nz/strings.html#matching-patterns-with-regular-expressions">regular expression</a> to find calls to <code>\includegraphics</code> in chunks’ LaTeX output, and then insert <code>\Description{A scatter plot of an exponentially growing curve}</code> after it.</p>
+<aside>
+If you want to follow along with this example, you must use a LaTeX template in which the command <code>\Description</code> has been defined. If you go to <a href="https://github.com/ulyngs/chi-proc-rmd-template">github.com/ulyngs/chi-proc-rmd-template</a> you will find the relevant files in <strong>chi-proc-rmd-template/inst/rmarkdown/templates/acm_chi_proc/skeleton/</strong> for using the ACM LaTex template alongside R Markdown.
+</aside>
+<p>This should work:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# store the usual chunk output function
+hook_chunk = knit_hooks$get(&#39;chunk&#39;)
+
+knit_hooks$set(chunk = function(x, options) {
+  regular_output = hook_chunk(x, options)
+
+  # if there is a description
+  if (!is.null(options$description)) {
+    # include the following LaTeX - \\1 refers to the regex grouping
+    latex_include &lt;- paste0(&quot;\\1\\\\Description\\{&quot;, options$description, &quot;\\}&quot;)
+    
+    # search and replace in the output
+    gsub(&#39;(\\\\includegraphics[^}]+})&#39;, latex_include, regular_output) 
+    
+  } else {
+    
+    # if there isn&#39;t a description just return unmodified
+    return(regular_output)  # pass to default hook
+    
+  }
+})</code></pre>
+</div>
+<p>Now let’s try with these chunk options for Figure <a href="#fig:my-description">3</a>:</p>
+<p><code>```{r my-description, echo=TRUE, fig.cap=&quot;A random plot&quot;, description=&quot;A scatter plot of an exponentially growing curve&quot;}</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(pressure)</code></pre>
+<div class="figure"><span id="fig:my-description"></span>
+<img src="how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/my-description-1.png" alt="A random plot" width="624" />
+<p class="caption">
+Figure 3: A random plot
+</p>
+</div>
+</div>
+<p>Uh-oh it actually doesn’t work, our LaTeX output still looks like this:</p>
+<pre class="latex"><code>
+\begin{figure}
+\centering
+\includegraphics{how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/my-description-1.pdf}
+\caption{\label{fig:my-description}A random plot}
+\end{figure}</code></pre>
+<p>Turns out that when we’re trying to modify the output in this way, we need to be explicit with <strong>knitr</strong> that the figure output is intended to be treated as LaTeX (the explanation for why is here: <a href="https://github.com/yihui/knitr/issues/1464">github.com/yihui/knitr/issues/1464</a>).</p>
+<p>So when we want to modify LaTeX output in our R Markdown document, we must to add this to our setup chunk:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+if (knitr::is_latex_output()) knitr::knit_hooks$set(plot = knitr::hook_plot_tex)</code></pre>
+</div>
+<p>Let’s try again:</p>
+<div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+plot(pressure)</code></pre>
+<div class="figure"><span id="fig:my-description-correct"></span>
+<img src="how-to-create-your-own-chunk-options-in-r-markdown_files/figure-html5/my-description-correct-1.png" alt="A random plot" width="624" />
+<p class="caption">
+Figure 4: A random plot
+</p>
+</div>
+</div>
+<p>Yup the LaTeX generated for Figure <a href="#fig:my-description-correct">4</a> now looks the way we want:</p>
+<pre class="latex"><code>
+\begin{figure}
+\includegraphics{how-to-create-your-own-chunk-options-in-r-markdown_files/figure-latex/my-description-1}
+\Description{A scatter plot of an exponentially growing curve} 
+\caption{A random plot}
+\label{fig:my-description}
+\end{figure}</code></pre>
+<h1 id="conclusion">Conclusion</h1>
+<p>It is super powerful to be able to create new own chunk options. In the R Markdown template for CHI proceedings, I also created a chunk option that allows chunks to be positioned vertically in PDF output by inserting the LaTeX commmand <code>\vspace</code>. The initial setup chunk looks like this:</p>
+<pre class="r"><code>
+# create additional chunk options
+hook_chunk = knit_hooks$get(&#39;chunk&#39;)
+knit_hooks$set(chunk = function(x, options) {
+  txt = hook_chunk(x, options)
+  # add chunk option &#39;vspaceout&#39; to position chunks vertically with \vspace
+  if (!is.null(options$vspaceout)) {
+    latex_vspace &lt;- paste0(&quot;\\1\\\\vspace\\{&quot;, options$vspaceout, &quot;\\}&quot;)
+    txt &lt;- sub(&#39;(\\\\begin[^}]+})&#39;, latex_vspace, txt)  
+  }
+  # add chunk option &#39;description&#39; which adds \Description{...} to figures
+  if (!is.null(options$description)) {
+    latex_include &lt;- paste0(&quot;\\1\\\\Description\\{&quot;, options$description, &quot;\\}&quot;)
+    gsub(&#39;(\\\\includegraphics[^}]+})&#39;, latex_include, txt) 
+  } else {
+    return(txt)  # pass to default hook
+  }
+})</code></pre>
+<p>You can inspect this in context <a href="https://github.com/ulyngs/chi-proc-rmd-template/blob/master/inst/rmarkdown/templates/acm_chi_proc/skeleton/skeleton.Rmd">here</a>.</p>
+<p>Now go ahead and put your newfound customisation powers into practice!</p>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
     <span class="disqus-comments">
       <i class="fas fa-comments"></i>
       &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2018-10-28-ulysses-in-cyberspace/">Comment on this article</span>
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/">Comment on this article</span>
     </span>
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=Ulysses%20in%20Cyberspace&amp;url=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-10-28-ulysses-in-cyberspace%2F">
+      <a href="https://twitter.com/share?text=How%20to%20Create%20Your%20Own%20Chunk%20Options%20in%20R%20Markdown&amp;url=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2018-10-28-ulysses-in-cyberspace%2F">
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fulyngs.github.io%2Fblog%2Fposts%2F2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown%2F">
         <i class="fab fa-facebook"></i>
       </a>
     </span>
@@ -1421,8 +1631,8 @@ d-code {
   <div id="disqus_thread" class="hidden"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'https://ulyngs.github.io/blog/posts/2018-10-28-ulysses-in-cyberspace/';
-  this.page.identifier = 'posts/2018-10-28-ulysses-in-cyberspace/';
+  this.page.url = 'https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/';
+  this.page.identifier = 'posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/';
 };
 (function() {
   var d = document, s = d.createElement('script');
