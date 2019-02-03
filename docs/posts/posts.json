@@ -9,7 +9,7 @@
         "url": "https://www.ulriklyngs.com"
       }
     ],
-    "date": "2019-02-01",
+    "date": "2019-02-03",
     "categories": [
       "rmarkdown",
       "knitr",
@@ -17,7 +17,7 @@
       "reproducibility"
     ],
     "preview": "posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/figures/preview.png",
-    "last_modified": "2019-02-03T15:36:20+00:00",
+    "last_modified": "2019-02-03T15:40:33+00:00",
     "preview_width": 709,
     "preview_height": 363
   },
