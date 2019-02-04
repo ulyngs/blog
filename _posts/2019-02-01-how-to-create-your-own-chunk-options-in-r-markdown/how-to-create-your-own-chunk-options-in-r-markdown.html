@@ -966,7 +966,7 @@
 <h3 class="d-toc-header">Table of Contents</h3>
 <nav class="d-toc" id="TOC">
 <ul>
-<li><a href="#getting-a-grip-on-knit-output-hooks">Getting a grip on knit output hooks</a><ul>
+<li><a href="#getting-a-grip-on-knitr-output-hooks">Getting a grip on knitr output hooks</a><ul>
 <li><a href="#the-simplest-and-stupidest-possible-thing-we-might-do">The simplest (and stupidest) possible thing we might do</a></li>
 <li><a href="#creating-a-new-chunk-option">Creating a new chunk option</a></li>
 </ul></li>
@@ -975,12 +975,12 @@
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
-<p>For the <a href="http://chi2019.acm.org">2019 ACM CHI conference</a> I wanted to go all in on reproducibility and write our paper submission completely in R Markdown, and knit to PDF via the ACM’s LaTeX template. It worked in the end (the source file for our paper is <a href="https://osf.io/zyj4h/">here</a>, an R package with our template is <a href="https://github.com/ulyngs/chi-proc-rmd-template">here</a>, and a related blog post is <a href="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/">here</a>).</p>
-<p>However, one of the tricky challenges along the was that I was missing some chunk options to be able to set all the necessary parameters from R Markdown. For example, after an update to their LaTeX template, the ACM wanted figures to include a description for visually impaired readers. This was supposed to be accomplished by adding <code>\Description{This is a figure description}</code> inside the relevant figure environment in LaTeX. How to comply with this while staying within an R Markdown workflow?</p>
-<p>One option was to add descriptions manually in LaTeX as the last step before finishing the paper - that is, add <code>keep_tex: true</code> in the YAML header, then manually adjust the <strong>.tex</strong> outputted file, add descriptions in this file, and then re-generate a PDF from it. This would work but was error-prone: if I found some mistake that needed fixing in the R Markdown source file, I would need to knit again and do another manual adding of the descriptions…</p>
-<p>The right solution would be to have a chunk option ‘description’ that I could set directly in the R Markdown source file with something like `<code>```{r my_figure, description=&quot;This is a figure description&quot;}</code>, and which would then automatically add <code>\Description{This is a figure description}</code> when knitting to PDF.</p>
-<p>Fortunately, it turns out that it’s entirely possible to create new chunk options yourself! Here’s how.</p>
-<h1 id="getting-a-grip-on-knit-output-hooks">Getting a grip on knit output hooks</h1>
+<p>For the <a href="http://chi2019.acm.org">2019 ACM CHI conference</a> I wanted to go all in on reproducibility by writing our paper submission completely in R Markdown and knit to PDF via the ACM’s LaTeX template. It worked in the end (the source file for our paper is <a href="https://osf.io/zyj4h/">here</a>, an R package with our template is <a href="https://github.com/ulyngs/chi-proc-rmd-template">here</a>, and a related blog post is <a href="https://ulyngs.github.io/blog/posts/2018-10-28-how-to-write-acm-articles-with-r-markdown/">here</a>).</p>
+<p>However, one of the challenges along the way was that I was missing chunk options to be able to set all the necessary parameters from R Markdown. For example, after an update to their LaTeX template, the ACM wanted figures to include a description for visually impaired readers. This was supposed to be accomplished by adding <code>\Description{This is a figure description}</code> inside the relevant figure environment in LaTeX. How to do this while staying within an R Markdown workflow?</p>
+<p>One option was to add descriptions manually in LaTeX as the last step before finishing the paper - that is, add <code>keep_tex: true</code> in the YAML header, manually add descriptions in the outputted <strong>.tex</strong> file, and then use this file to generate a new PDF. This would work but was error-prone: if I found some a that needed fixing in the R Markdown source file, I would need to knit again and do another manual adding of descriptions…</p>
+<p>The much better solution would be to have a chunk option ‘description’ that I could set directly in the R Markdown source file with something like <code>```{r my_figure, description=&quot;This is a figure description&quot;}</code>, and which would automatically add <code>\Description{This is a figure description}</code> when knitting to PDF.</p>
+<p>Fortunately, it turns out that it’s entirely possible, by simply creating a new chunk option yourself! Here’s how.</p>
+<h1 id="getting-a-grip-on-knitr-output-hooks">Getting a grip on knitr output hooks</h1>
 <p><a href="https://yihui.name/knitr/">Knitr</a>, the package which carries out the initial part of R Markdown’s magic, provides something called ‘hooks’. These are <a href="https://yihui.name/knitr/hooks/">“customisable functions to run before/after a code chunk, tweak the output, and manipulate chunk options”</a>. We will focus on the ‘output hooks’ which can be used to customise and polish <em>raw</em> output from chunks. There are 8 types of output hooks that grab different types of output; we will modify the <code>chunk</code> output hook which grab all the output of a chunk.</p>
 <p>A chunk output hook takes the form <code>function (x, options)</code> where <code>x</code> is a character string of the output and <code>options</code> is a list of the chunk options.</p>
 <p>To modify them, do something like this:</p>
@@ -1017,8 +1017,8 @@ function (x, options)
         options$layout, &quot;\&quot;&gt;\n&quot;, output, &quot;\n&quot;, padding, &quot;\n&quot;, 
         padding, &quot;&lt;/div&gt;\n&quot;)
 }
-&lt;bytecode: 0x7fbe42096440&gt;
-&lt;environment: 0x7fbe42094df0&gt;</code></pre>
+&lt;bytecode: 0x7fb62b9b2040&gt;
+&lt;environment: 0x7fb62b9b09f0&gt;</code></pre>
 </div>
 <p>Then we modify it:</p>
 <pre class="r"><code>
