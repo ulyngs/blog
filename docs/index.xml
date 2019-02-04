@@ -14,7 +14,7 @@
     <generator>Radix</generator>
     <lastBuildDate>Sun, 03 Feb 2019 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>How to Create Your Own Chunk Options in R Markdown</title>
+      <title>How to Create New Chunk Options in R Markdown</title>
       <dc:creator>Ulrik Lyngs</dc:creator>
       <link>https://ulyngs.github.io/blog/posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown</link>
       <description>What to do when the chunk options you need to get R Markdown to do what you want is missing? You create the ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be tricky to figure out how. Here's a quick guide.</description>
