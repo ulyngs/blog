@@ -1,0 +1,16 @@
+---
+title: AST-what-now?
+author: Ulrik Lyngs
+output:
+  pdf_document:
+    pandoc_args: ["--lua-filter=toy_filter.lua"]
+    keep_tex: true
+  html_document:
+    css: style.css
+---
+
+## my header
+
+Some text with *italics* and also **bold**.
+
+And <span class="correction">this text</span>, but not this, <span class="correction">should be highlighted</span>.
