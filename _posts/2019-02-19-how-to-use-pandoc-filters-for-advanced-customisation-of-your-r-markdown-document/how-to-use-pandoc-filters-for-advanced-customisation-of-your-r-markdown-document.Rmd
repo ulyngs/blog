@@ -1,7 +1,7 @@
 ---
 title: "How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Documents"
 description: |
-  In a package I'm developing, I had a problem around highlighting text in LaTeX and HTML output. The solution was to use **pandoc filters** for complete control over the final document. Here's a guide to writing such filters when R Markdown ain't got what you need.
+  In a package I'm developing, I had a problem around highlighting text in LaTeX and HTML output. The solution I found involved using **pandoc filters** to take full control over the final document. Here's a guide to writing such filters when R Markdown ain't got what you need.
 author:
   - name: Ulrik Lyngs
     url: https://www.ulriklyngs.com
@@ -53,7 +53,7 @@ But with this approach, markdown syntax wasn't rendered correctly: For example,i
 
 *Sigh.*
 
-# Finding a solution: The path from .Rmd to output format
+# Finding a solution: The path from .Rmd to output
 To solve the problem, I began by reminding myself how R Markdown works under the hood:
 
 ```{r, fig.cap="Flowchart of the route from .Rmd file to compiled document"}
@@ -66,7 +66,7 @@ Then [`pandoc`](http://pandoc.org) converts this markdown file into your output 
 So instead of fiddling around at the **.Rmd** -> **.md** stage, as I tried at first, why not try at the **.md** -> **.pdf/.html** stage?
 Turns out that's exactly what ['pandoc filters'](http://pandoc.org/filters.html) are for.
 
-# What are Pandoc filters?
+# What are pandoc filters?
 `pandoc` is an open-source document converter written by [John MacFarlane](https://johnmacfarlane.net).
 It converts documents from one format to another by first parsing the source file into an 'abstract syntax tree' (AST), which is then converted into the target format.
 
@@ -104,7 +104,7 @@ Emph [Str "italics"],Space,Str "and",Space,Str "also",Space,
 Strong [Str "bold"],Str "."]]
 ```
 
-## Languages in which to write pandoc filters
+## Languages with which to write pandoc filters
 So basically, a pandoc filter walks through our document's elements in this form and make some changes we might want.
 
 The original way to create filters used the functional programming language [Haskell](https://www.haskell.org).
@@ -116,7 +116,7 @@ Starting with pandoc 2.0, [this problem was bypassed](https://www.pandoc.org/lua
 
 **tl;dr**: pandoc filters written in [lua](http://www.lua.org) should 'just work'. Yay, let's use that!
 
-# Taking lua filters for a spin: Silly examples
+# Taking lua filters for a spin
 ## Manipulate Metadata from YAML header
 Lua is a bit strange. 
 It supports only a small number of atomic data types, and typical data structures like lists are represented using tables.
