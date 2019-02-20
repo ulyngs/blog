@@ -14,10 +14,10 @@
     <generator>Radix</generator>
     <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Document</title>
+      <title>How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Documents</title>
       <dc:creator>Ulrik Lyngs</dc:creator>
       <link>https://ulyngs.github.io/blog/posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document</link>
-      <description>In the `oxforddown` package I'm developing for thesis writing with R Markdown, I had a tricky problem around highlighting passages of text in both LaTeX and HTML output. The solution? If R Markdown ain't got what you need out of the box, use Pandoc filters for complete control over the final result.</description>
+      <description>In a package I'm developing, I had a problem around highlighting text in LaTeX and HTML output. The solution was to use **pandoc filters** for complete control over the final document. Here's a guide to writing such filters when R Markdown ain't got what you need.</description>
       <guid>https://ulyngs.github.io/blog/posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document</guid>
       <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
       <media:content url="https://ulyngs.github.io/blog/posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document/figures/preview.png" medium="image" type="image/png" width="662" height="447"/>

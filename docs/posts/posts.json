@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document/",
-    "title": "How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Document",
-    "description": "In the `oxforddown` package I'm developing for thesis writing with R Markdown, I had a tricky problem around highlighting passages of text in both LaTeX and HTML output. The solution? If R Markdown ain't got what you need out of the box, use Pandoc filters for complete control over the final result.",
+    "title": "How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Documents",
+    "description": "In a package I'm developing, I had a problem around highlighting text in LaTeX and HTML output. The solution was to use **pandoc filters** for complete control over the final document. Here's a guide to writing such filters when R Markdown ain't got what you need.",
     "author": [
       {
         "name": "Ulrik Lyngs",
@@ -18,7 +18,7 @@
       "LaTeX"
     ],
     "preview": "posts/2019-02-19-how-to-use-pandoc-filters-for-advanced-customisation-of-your-r-markdown-document/figures/preview.png",
-    "last_modified": "2019-02-20T17:43:04+00:00",
+    "last_modified": "2019-02-20T17:53:08+00:00",
     "preview_width": 662,
     "preview_height": 447
   },
