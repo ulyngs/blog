@@ -25,7 +25,7 @@
   {
     "path": "posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/",
     "title": "How to Create New Chunk Options in R Markdown",
-    "description": "What to do when the chunk options you need to get R Markdown to do what you want is missing? You create the ones you need. It is incredibly useful to be able to do so --- unfortunately it can also be tricky to figure out how. Here's a quick guide.",
+    "description": "What to do when the chunk options you need to get R Markdown to do what you want are missing? You create the ones you need. It is incredibly useful to be able to do so --- unfortunately it can be a bit tricky to figure out how. Here's a quick guide.",
     "author": [
       {
         "name": "Ulrik Lyngs",
@@ -40,7 +40,7 @@
       "reproducibility"
     ],
     "preview": "posts/2019-02-01-how-to-create-your-own-chunk-options-in-r-markdown/figures/preview.png",
-    "last_modified": "2019-02-04T17:44:54+00:00",
+    "last_modified": "2019-03-02T22:36:38+00:00",
     "preview_width": 709,
     "preview_height": 363
   },
