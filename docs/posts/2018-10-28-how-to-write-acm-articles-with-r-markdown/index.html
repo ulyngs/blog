@@ -1345,7 +1345,7 @@ d-appendix {
 /* make code sections scroll rather than overflow, and give them a grey background */
 /* UL: 19 Nov 2018, this should've been fixed in source code now - https://github.com/rstudio/radix/commit/abbfd67146e44eb873c561cbb1fc11065788f7f8 */
 d-code {
-  overflow-x: auto;
+  overflow-x: auto !important;
   background: #f8f8f8;
 }
 </style>
@@ -1558,7 +1558,7 @@ iris %&gt;%
 <p>Finally, the acm-article documentation again tells us that we can get our table to span two columns by putting it in a <code>\table*</code> rather than a <code>\table</code>environment. <del>It turns out that there’s not at the moment any easy way to do this from within R Markdown (the <code>fig.env</code> chunk option doesn’t work with tables when we use the kable function).</del></p>
 <p><em>Update 7 Aug 2018:</em> Yihui Xie, creator of knitr, <a href="https://github.com/yihui/knitr/issues/1585#issuecomment-410922084">told me</a> that this is done just as easily. We simply add <code>table.env='table*'</code> as argument to the kable function:</p>
 <pre class="markdown"><code>
-`r&#39;&#39;````{r table-iris-wide, echo=FALSE}
+```{r table-iris-wide, echo=FALSE}
 iris %&gt;%
   select(-Species) %&gt;%  #drop the species column
   head(10) %&gt;%          #show just the first 10 rows
@@ -1568,10 +1568,10 @@ iris %&gt;%
 <h1 id="step-6.-referencing-our-figures-and-tables">Step 6. Referencing our figures and tables</h1>
 <p>To finish off, how do we reference our figures and tables? Two options - the first is to simply use standard LaTeX syntax (you can use any LaTeX syntax within your Rmd file if you’re compiling it to a PDF). For example:</p>
 <pre class="markdown"><code>
-The maturation of the song over time is shown in Figure \ref{fig:col-width-tribute-plot}.</code></pre>
+(...) over time is shown in Figure \ref{fig:col-width-tribute-plot}.</code></pre>
 <p>That’s fine, but if you want to keep the option of outputting to another format than PDF in the future, e.g. gitbook or Word, you’ll want to use bookdown’s slightly different syntax:</p>
 <pre class="markdown"><code>
-The maturation of the song over time is shown in Figure \@ref(fig:tribute-plot).</code></pre>
+(...) over time is shown in Figure \@ref(fig:tribute-plot).</code></pre>
 <p>Either way, the .tex output is the same, and so is the result: <img class="img-responsive" alt="Step 6 referencing figures and tables" src="https://raw.githubusercontent.com/ulyngs/acm-articles-rmd/master/figures/step6.png"></p>
 <h1 id="step-7.-celebrate">Step 7. Celebrate!</h1>
 <p>You now know how to use R Markdown alongside the ACM master templates. Yay for reproducible research!</p>

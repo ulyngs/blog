@@ -248,7 +248,7 @@ Finally, the acm-article documentation again tells us that we can get our table 
 *Update 7 Aug 2018:* Yihui Xie, creator of knitr, [told me](https://github.com/yihui/knitr/issues/1585#issuecomment-410922084) that this is done just as easily. We simply add `table.env='table*'` as argument to the kable function:
 
 ````markdown
-`r''````{r table-iris-wide, echo=FALSE}
+`r ''````{r table-iris-wide, echo=FALSE}
 iris %>%
   select(-Species) %>%  #drop the species column
   head(10) %>%          #show just the first 10 rows
@@ -264,13 +264,13 @@ Et voilá, our table is put in a `\table*` environment in the .tex file and now 
 To finish off, how do we reference our figures and tables? Two options - the first is to simply use standard LaTeX syntax (you can use any LaTeX syntax within your Rmd file if you're compiling it to a PDF). For example:
 
 ```markdown
-The maturation of the song over time is shown in Figure \ref{fig:col-width-tribute-plot}.
+(...) over time is shown in Figure \ref{fig:col-width-tribute-plot}.
 ```
 
 That's fine, but if you want to keep the option of outputting to another format than PDF in the future, e.g. gitbook or Word, you'll want to use bookdown's slightly different syntax:
 
 ```markdown
-The maturation of the song over time is shown in Figure \@ref(fig:tribute-plot).
+(...) over time is shown in Figure \@ref(fig:tribute-plot).
 ```
 
 Either way, the .tex output is the same, and so is the result:
