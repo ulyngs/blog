@@ -1473,16 +1473,16 @@ Emph [Str &quot;italics&quot;],Space,Str &quot;and&quot;,Space,Str &quot;also&qu
 Strong [Str &quot;bold&quot;],Str &quot;.&quot;]]</code></pre>
 <h2 id="languages-with-which-to-write-pandoc-filters">Languages with which to write pandoc filters</h2>
 <p>So basically, a pandoc filter walks through our document’s elements in this form and makes some changes we might want.</p>
-<p>The original way to create filters used the functional programming language <a href="https://www.haskell.org">Haskell</a>. However, as Haskell is not widely known, John MacFarlane also created the python package <a href="https://github.com/jgm/pandocfilters"><code>pandocfilters</code></a>, and others made the more accessible alternative (still in python) <a href="https://github.com/sergiocorreia/panflute"><code>panflute</code> package</a>. Adaptations of the <code>pandocfilters</code> package has been developed for other languages, including <a href="https://www.npmjs.com/package/pandoc-filter">JavaScript</a> and <a href="https://cran.r-project.org/web/packages/pandocfilters/README.html">R</a>).</p>
-<p>A potential problem with these options is that they create new dependencies, for example on a local Python installation, which means that additional stuff besides pandoc is necessary get them to work.</p>
+<p>The original way to create filters used the functional programming language <a href="https://www.haskell.org">Haskell</a>. However, as Haskell is not widely known, John MacFarlane also created the python package <a href="https://github.com/jgm/pandocfilters"><code>pandocfilters</code></a>, and others made the more accessible alternative (still in python) <a href="https://github.com/sergiocorreia/panflute"><code>panflute</code> package</a>. Adaptations of the <code>pandocfilters</code> package have been developed for other languages, including <a href="https://www.npmjs.com/package/pandoc-filter">JavaScript</a> and <a href="https://cran.r-project.org/web/packages/pandocfilters/README.html">R</a>).</p>
+<p>A potential problem with these options is that they create new dependencies, for example on a local Python installation, which means that additional stuff besides <code>pandoc</code> is necessary to get them to work.</p>
 <p>Since pandoc v2.0, <a href="https://www.pandoc.org/lua-filters.html">this problem can be bypassed</a>: Now, pandoc has a built-in ability to understand filters written in the lightweight programming language <a href="http://www.lua.org">lua</a> (the pandoc executable now includes a lua interpreter and relevant libraries).</p>
 <p><strong>tl;dr</strong>: pandoc filters written in <a href="http://www.lua.org">lua</a> should ‘just work’. Yay, let’s use lua!</p>
 <h1 id="taking-lua-filters-for-a-spin">Taking lua filters for a spin</h1>
 <p>First thing to note is that Lua is a bit strange. It supports only a small number of atomic data types, and typical data structures like lists are represented using tables. In fact, tables are Lua’s only native data structure.</p>
-<p>With that in mind (which will make sense of the syntax we use to solve the original problem in a minute), let’s try building a couple of examples:</p>
+<p>With that in mind (which will make sense of the syntax we use to solve the original problem in a minute), let’s try a couple of examples.</p>
 <h2 id="manipulate-metadata-from-yaml-header">Manipulate Metadata from YAML header</h2>
 <p>Imagine we want to use a pandoc filter to change the author name in the final output of <strong>text.Rmd</strong>.</p>
-<p>First, let’s create an empty text file and save it with the name <strong>toy_filter.lua</strong>. Then add a reference to this filter in <strong>text.Rmd</strong>’s YAML header:</p>
+<p>First, create an empty text file and save it with the name <strong>toy_filter.lua</strong>. Then, in <strong>text.Rmd</strong>’s YAML header, add an line that tells pandoc to use this file as a lua filter:</p>
 <pre class="markdown"><code>
 ---
 title: AST-what-now?
@@ -1495,39 +1495,39 @@ output:
 ## my header
 
 Some text with *italics* and also **bold**.</code></pre>
-<p>If we leave <strong>toy_filter.lua</strong> empty and knit <strong>text.Rmd</strong>, we get the expected PDF output:</p>
+<p>If we leave <strong>toy_filter.lua</strong> empty and knit <strong>text.Rmd</strong>, the PDF output is unaltered:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="figures/lua-no.png" width="1074" /></p>
 </div>
-<p>Now let’s use our pandoc filter to change the author name to ‘Hello, World!’. Our filter should find the YAML metadata in the abstract syntax tree (AST) and manipulate the author, before it lets pandoc convert it to a <strong>.tex</strong> file from which a PDF can be built.</p>
-<p>To do this, create a function with the name of the element in the AST we want to manipulate, in this case <code>Meta</code>. Then we manipulate the author and return a modified version:</p>
+<p>Now let’s use our <strong>toy_filter.lua* as a filter to change the author name to ‘Hello, World!’. The filter should find the YAML metadata in the abstract syntax tree (AST) and manipulate the author, before pandoc goes on to convert it to a </strong>.tex** file from which a PDF can be built.</p>
+<p>To do this, we create a function with the name of the element in the AST we want to manipulate, in this case <code>Meta</code>. This function should manipulate the author and return a modified version:</p>
 <pre class="lua"><code>
 function Meta(m)
   m.author = &quot;Hello, World!&quot;
   return m
 end</code></pre>
-<p>If we save <strong>toy_filter.lua</strong> and try knitting <strong>text.Rmd</strong> to PDF again, this is the result:</p>
+<p>If we save <strong>toy_filter.lua</strong> and now knit <strong>text.Rmd</strong> to PDF, this is the result:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="figures/lua-yes.png" width="1064" /></p>
 </div>
 <h2 id="manipulate-text-formatting">Manipulate text formatting</h2>
 <p>Another silly example: Say we wanted to change <em>italicised text</em> to <strong>bold</strong>.</p>
-<p>First we take a look at the <a href="https://www.pandoc.org/lua-filters.html">documentation for pandoc lua filters</a>. We discover that italicised text passages are parsed by pandoc as <code>Emph</code> inline elements in the AST, and text passages in bold as <code>Strong</code> inline elements.</p>
+<p>First, we look at the <a href="https://www.pandoc.org/lua-filters.html">documentation for pandoc lua filters</a>. We notice that italicised text passages are parsed by pandoc as <code>Emph</code> inline elements in the AST, and text passages in bold as <code>Strong</code> inline elements.</p>
 <p>Then we add this to <strong>toy_filter.lua</strong>:</p>
 <pre class="lua"><code>
 function Emph(element)
   return pandoc.Strong(element.content)
 end</code></pre>
-<p>Now, when we save <strong>toy_filter.lua</strong> and knit <strong>text.Rmd</strong> to PDF we get this:</p>
+<p>Now, when we save <strong>toy_filter.lua</strong> and knit <strong>text.Rmd</strong> to PDF, we get this:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="figures/lua-bold.png" width="1008" /></p>
 </div>
 <h1 id="solving-the-original-problem">Solving the original problem</h1>
 <p>My problem was how to do inline highlighting of text in both HTML and PDF output.</p>
 <p>In the OxThesis LaTeX template this was already possible by wrapping text in a <code>mccorrect</code> command <code>\mccorrect{like this}</code>.</p>
-<p>To solve the problem, I needed to make use of some inline element that pandoc could parse. Turns out pandoc recognises inline <code>span</code> elements.</p>
+<p>To solve the problem, I needed to use some inline element that pandoc could parse. Turns out pandoc recognises inline <code>span</code> elements.</p>
 <p>The solution was therefore quite simple:<br />
-In my source document I could wrap inline-text passages I wanted to highlight in a <code>span</code> element, <code>&lt;span&gt;like this&lt;/span&gt;</code>. To avoid highlighting <em>all</em> span elements, I could also add a class ‘correction’ to the span, <code>&lt;span class=&quot;correction&quot;&gt;like this&lt;/span&gt;</code>.</p>
+In my source document I could wrap inline-text passages I wanted to highlight in a <code>span</code> element, <code>&lt;span&gt;like this&lt;/span&gt;</code>. To avoid highlighting <em>all</em> span elements, I would also add a class ‘correction’, as in <code>&lt;span class=&quot;correction&quot;&gt;like this&lt;/span&gt;</code>.</p>
 <h2 id="solving-for-html">Solving for HTML</h2>
 <p>When outputting to HTML, highlighting these passages was then simply a matter of styling with CSS: I created a new text file <strong>style.css</strong> and in it added</p>
 <pre class="css"><code>
@@ -1557,7 +1557,7 @@ And &lt;span class=&quot;correction&quot;&gt;this text&lt;/span&gt;, but not thi
 <p><img src="figures/solved-html.png" width="510" /></p>
 </div>
 <h2 id="solving-for-pdf">Solving for PDF</h2>
-<p>For PDF output, I needed my lua filter to find <code>Span</code> elements, check if the class was “correction”, and if so wrap the content in the <code>\mccorrect</code> command. This should do the trick:</p>
+<p>For PDF output, I needed the lua filter to find <code>Span</code> elements, check if the class was “correction”, and if so wrap the content in the <code>\mccorrect</code> command. This would do the trick:</p>
 <pre class="lua"><code>
 function Span (el)
   if el.classes[1] == &quot;correction&quot; then
@@ -1567,9 +1567,6 @@ function Span (el)
   return el.content
 end</code></pre>
 <p>If I included this in <strong>toy_filter.lua</strong>, knitted <strong>text.Rmd</strong> to PDF and inspected the intermediary <strong>.tex</strong> file (add <code>keep_tex: true</code> in your YAML header) I saw that it worked as expected:</p>
-<aside>
-Note that unless you are using a LaTeX template which has a command <code>mccorrect</code> defined, you will get an error at the final step of creating a PDF from the <strong>.tex</strong> file.
-</aside>
 <pre class="latex"><code>
 Some text with \textbf{italics} and also \textbf{bold}.
 
@@ -1577,11 +1574,14 @@ And \mccorrect{this text}, but not this, \mccorrect{should be
 highlighted}.
 
 \end{document}</code></pre>
+<aside>
+Note that unless you are using a LaTeX template which has a command <code>mccorrect</code> defined, you will get an error at the final step of creating a PDF from the <strong>.tex</strong> file.
+</aside>
 <p>Hooray!</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>It can be tricky to figure out how pandoc filters and the lua language work.</p>
-<p>When you try creating your own filters, I recommend playing around with print statements (in the filter above, I tried printing to the console the list of classes assigned to an element with <code>print(table.concat(el.classes,&quot;, &quot;))</code>; I tried printing out true/false as to whether the ‘correction’ class was indeed the first one with <code>print(el.classes[1] == &quot;correction&quot;))</code>; etc.).</p>
-<p>And of course have a look at the example filters on <a href="github.com/pandoc/lua-filters">https://github.com/pandoc/lua-filters</a> and try to find something that resembles what you need.</p>
+<p>When you try making your own filters, you might want to start by playing around with print statements (in the filter above, I tried printing to the console the list of classes assigned to an element with <code>print(table.concat(el.classes,&quot;, &quot;))</code>; I also tried printing out true/false as to whether the ‘correction’ class was indeed the first one with <code>print(el.classes[1] == &quot;correction&quot;))</code>; etc.).</p>
+<p>And of course have a look at the example filters on <a href="github.com/pandoc/lua-filters">https://github.com/pandoc/lua-filters</a> and look for examples that resemble what you need.</p>
 <p>Good luck!</p>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">

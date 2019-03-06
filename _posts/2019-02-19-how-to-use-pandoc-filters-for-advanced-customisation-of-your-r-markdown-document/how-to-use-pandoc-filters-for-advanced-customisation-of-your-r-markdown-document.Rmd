@@ -109,9 +109,9 @@ Strong [Str "bold"],Str "."]]
 So basically, a pandoc filter walks through our document's elements in this form and makes some changes we might want.
 
 The original way to create filters used the functional programming language [Haskell](https://www.haskell.org).
-However, as Haskell is not widely known, John MacFarlane also created the python package [`pandocfilters`](https://github.com/jgm/pandocfilters), and others made the more accessible alternative (still in python) [`panflute` package](https://github.com/sergiocorreia/panflute). Adaptations of the `pandocfilters` package has been developed for other languages, including [JavaScript](https://www.npmjs.com/package/pandoc-filter) and [R](https://cran.r-project.org/web/packages/pandocfilters/README.html)).
+However, as Haskell is not widely known, John MacFarlane also created the python package [`pandocfilters`](https://github.com/jgm/pandocfilters), and others made the more accessible alternative (still in python) [`panflute` package](https://github.com/sergiocorreia/panflute). Adaptations of the `pandocfilters` package have been developed for other languages, including [JavaScript](https://www.npmjs.com/package/pandoc-filter) and [R](https://cran.r-project.org/web/packages/pandocfilters/README.html)).
 
-A potential problem with these options is that they create new dependencies, for example on a local Python installation, which means that additional stuff besides pandoc is necessary get them to work.
+A potential problem with these options is that they create new dependencies, for example on a local Python installation, which means that additional stuff besides `pandoc` is necessary to get them to work.
 
 Since pandoc v2.0, [this problem can be bypassed](https://www.pandoc.org/lua-filters.html): Now, pandoc has a built-in ability to understand filters written in the lightweight programming language [lua](http://www.lua.org) (the pandoc executable now includes a lua interpreter and relevant libraries).
 
@@ -122,12 +122,12 @@ First thing to note is that Lua is a bit strange.
 It supports only a small number of atomic data types, and typical data structures like lists are represented using tables.
 In fact, tables are Lua's only native data structure.
 
-With that in mind (which will make sense of the syntax we use to solve the original problem in a minute), let's try building a couple of examples:
+With that in mind (which will make sense of the syntax we use to solve the original problem in a minute), let's try a couple of examples.
 
 ## Manipulate Metadata from YAML header
 Imagine we want to use a pandoc filter to change the author name in the final output of **text.Rmd**.
 
-First, let's create an empty text file and save it with the name **toy_filter.lua**. Then add a reference to this filter in **text.Rmd**'s YAML header:
+First, create an empty text file and save it with the name **toy_filter.lua**. Then, in **text.Rmd**'s YAML header, add an line that tells pandoc to use this file as a lua filter:
 
 ```markdown
 ---
@@ -143,17 +143,17 @@ output:
 Some text with *italics* and also **bold**.
 ```
 
-If we leave **toy_filter.lua** empty and knit **text.Rmd**, we get the expected PDF output:
+If we leave **toy_filter.lua** empty and knit **text.Rmd**, the PDF output is unaltered:
 
 ```{r}
 include_graphics("figures/lua-no.png")
 ```
 
-Now let's use our pandoc filter to change the author name to 'Hello, World!'. 
-Our filter should find the YAML metadata in the abstract syntax tree (AST) and manipulate the author, before it lets pandoc convert it to a **.tex** file from which a PDF can be built.
+Now let's use our **toy_filter.lua* as a filter to change the author name to 'Hello, World!'. 
+The filter should find the YAML metadata in the abstract syntax tree (AST) and manipulate the author, before pandoc goes on to convert it to a **.tex** file from which a PDF can be built.
 
-To do this, create a function with the name of the element in the AST we want to manipulate, in this case `Meta`.
-Then we manipulate the author and return a modified version:
+To do this, we create a function with the name of the element in the AST we want to manipulate, in this case `Meta`.
+This function should manipulate the author and return a modified version:
 
 ```lua
 function Meta(m)
@@ -162,7 +162,7 @@ function Meta(m)
 end
 ```
 
-If we save **toy_filter.lua** and try knitting **text.Rmd** to PDF again, this is the result:
+If we save **toy_filter.lua** and now knit **text.Rmd** to PDF, this is the result:
 
 ```{r}
 include_graphics("figures/lua-yes.png")
@@ -171,7 +171,7 @@ include_graphics("figures/lua-yes.png")
 ## Manipulate text formatting
 Another silly example: Say we wanted to change *italicised text* to **bold**.
 
-First we take a look at the [documentation for pandoc lua filters](https://www.pandoc.org/lua-filters.html). We discover that italicised text passages are parsed by pandoc as `Emph` inline elements in the AST, and text passages in bold as `Strong` inline elements.
+First, we look at the [documentation for pandoc lua filters](https://www.pandoc.org/lua-filters.html). We notice that italicised text passages are parsed by pandoc as `Emph` inline elements in the AST, and text passages in bold as `Strong` inline elements.
 
 Then we add this to **toy_filter.lua**:
 
@@ -181,7 +181,7 @@ function Emph(element)
 end
 ```
 
-Now, when we save **toy_filter.lua** and knit **text.Rmd** to PDF we get this:
+Now, when we save **toy_filter.lua** and knit **text.Rmd** to PDF, we get this:
 
 ```{r}
 include_graphics("figures/lua-bold.png")
@@ -192,12 +192,12 @@ My problem was how to do inline highlighting of text in both HTML and PDF output
 
 In the OxThesis LaTeX template this was already possible by wrapping text in a `mccorrect` command `\mccorrect{like this}`. 
 
-To solve the problem, I needed to make use of some inline element that pandoc could parse. 
+To solve the problem, I needed to use some inline element that pandoc could parse. 
 Turns out pandoc recognises inline `span` elements. 
 
 The solution was therefore quite simple:\
 In my source document I could wrap inline-text passages I wanted to highlight in a `span` element, `<span>like this</span>`.
-To avoid highlighting *all* span elements, I could also add a class 'correction' to the span, `<span class="correction">like this</span>`.
+To avoid highlighting *all* span elements, I would also add a class 'correction', as in `<span class="correction">like this</span>`.
 
 ## Solving for HTML
 When outputting to HTML, highlighting these passages was then simply a matter of styling with CSS: I created a new text file **style.css** and in it added
@@ -237,7 +237,7 @@ include_graphics("figures/solved-html.png")
 ```
 
 ## Solving for PDF
-For PDF output, I needed my lua filter to find `Span` elements, check if the class was "correction", and if so wrap the content in the `\mccorrect` command. This should do the trick:
+For PDF output, I needed the lua filter to find `Span` elements, check if the class was "correction", and if so wrap the content in the `\mccorrect` command. This would do the trick:
 
 ```lua
 function Span (el)
@@ -251,10 +251,6 @@ end
 
 If I included this in **toy_filter.lua**, knitted **text.Rmd** to PDF and inspected the intermediary **.tex** file (add `keep_tex: true` in your YAML header) I saw that it worked as expected:
 
-<aside>
-Note that unless you are using a LaTeX template which has a command `mccorrect` defined, you will get an error at the final step of creating a PDF from the **.tex** file.
-</aside>
-
 ```latex
 Some text with \textbf{italics} and also \textbf{bold}.
 
@@ -264,13 +260,18 @@ highlighted}.
 \end{document}
 ```
 
+<aside>
+Note that unless you are using a LaTeX template which has a command `mccorrect` defined, you will get an error at the final step of creating a PDF from the **.tex** file.
+</aside>
+
+
 Hooray!
 
 # Conclusion
 It can be tricky to figure out how pandoc filters and the lua language work.
 
-When you try creating your own filters, I recommend playing around with print statements (in the filter above, I tried printing to the console the list of classes assigned to an element with `print(table.concat(el.classes,", "))`; I tried printing out true/false as to whether the 'correction' class was indeed the first one with `print(el.classes[1] == "correction"))`; etc.).
+When you try making your own filters, you might want to start by playing around with print statements (in the filter above, I tried printing to the console the list of classes assigned to an element with `print(table.concat(el.classes,", "))`; I also tried printing out true/false as to whether the 'correction' class was indeed the first one with `print(el.classes[1] == "correction"))`; etc.).
 
-And of course have a look at the example filters on [https://github.com/pandoc/lua-filters](github.com/pandoc/lua-filters) and try to find something that resembles what you need.
+And of course have a look at the example filters on [https://github.com/pandoc/lua-filters](github.com/pandoc/lua-filters) and look for examples that resemble what you need.
 
 Good luck!
