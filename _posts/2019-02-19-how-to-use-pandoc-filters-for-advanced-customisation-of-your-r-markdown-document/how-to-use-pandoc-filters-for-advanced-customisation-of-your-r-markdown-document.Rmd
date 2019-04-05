@@ -47,7 +47,7 @@ But for inline corrections, it was tricky:\
 If I used raw LaTeX, it would break the HTML output.\
 If I used raw HTML, it would break the PDF output.\
 
-I experimented with building my own function to apply the appropriate environments to inline corrections, like `` ``r ''`r apply_correction{and *italicised* correction}` ``. 
+I experimented with building my own function to apply the appropriate environments to inline corrections, like `` ``r ''`r apply_correction(an *italicised* correction)` ``. 
 
 But with this approach, markdown syntax wasn't rendered correctly: For example, italicised text would in PDF output be rendered literally as 'an \*italicised\* correction'.
 
@@ -127,7 +127,7 @@ With that in mind (which will make sense of the syntax we use to solve the origi
 ## Manipulate Metadata from YAML header
 Imagine we want to use a pandoc filter to change the author name in the final output of **text.Rmd**.
 
-First, create an empty text file and save it with the name **toy_filter.lua**. Then, in **text.Rmd**'s YAML header, add an line that tells pandoc to use this file as a lua filter:
+First, create an empty text file and save it with the name **toy_filter.lua**. Then, in **text.Rmd**'s YAML header, add a line that tells pandoc to use this file as a lua filter:
 
 ```markdown
 ---
@@ -143,13 +143,14 @@ output:
 Some text with *italics* and also **bold**.
 ```
 
+
 If we leave **toy_filter.lua** empty and knit **text.Rmd**, the PDF output is unaltered:
 
 ```{r}
 include_graphics("figures/lua-no.png")
 ```
 
-Now let's use our **toy_filter.lua* as a filter to change the author name to 'Hello, World!'. 
+Now let's use **toy_filter.lua** as a filter to change the author name to 'Hello, World!'. 
 The filter should find the YAML metadata in the abstract syntax tree (AST) and manipulate the author, before pandoc goes on to convert it to a **.tex** file from which a PDF can be built.
 
 To do this, we create a function with the name of the element in the AST we want to manipulate, in this case `Meta`.
