@@ -1306,12 +1306,12 @@ gtag('config', 'UA-84972342-3');
 
 .nav-left {
   color: #777;
-  margin-left: 10% !important;
+  /*margin-left: 10% !important;*/
 }
 
 .nav-right {
   color: #777;
-  margin-right: 10% !important;
+  /*margin-right: 10% !important;*/
 }
 .nav-right a:hover,
 .radix-site-footer a:hover{
@@ -1344,6 +1344,13 @@ d-code {
   overflow-x: auto !important;
   background: #f8f8f8;
 }
+
+
+@media screen and (min-width: 768px) {
+  .nav-right {
+    margin-right: 10% !important;
+  }
+}
 </style>
 <!--/radix_placeholder_site_in_header-->
 
@@ -1355,7 +1362,7 @@ d-code {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Making Statistics Make Sense","description":"For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2017-02-26T00:00:00.000+01:00","citationText":"Lyngs, 2017"}
+{"title":"Making Statistics Make Sense","description":"For students who struggle with learning statistics, or for researchers who aren’t themselves statisticians, our obscure vocabulary makes understanding and remembering concepts unnecessarily difficult. It increases the number of terms to learn and puts a smokescreen over the relationship between tests. Reforming our statistics vocabulary should make statistics quicker to learn, more transparent to understand, and easier to use.","authors":[{"author":"Ulrik Lyngs","authorURL":"https://www.ulriklyngs.com","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2017-02-26T00:00:00.000+00:00","citationText":"Lyngs, 2017"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1366,8 +1373,11 @@ d-code {
 <a href="../../index.html" class="title">Ulrik Lyngs</a>
 </div>
 <div class="nav-right">
-<a href="../../index.html">Posts</a>
-<a href="https://ulriklyngs.com">Back to main site</a>
+<a href="https://ulriklyngs.com">Home</a>
+<a href="https://ulriklyngs.com/projects">Projects</a>
+<a href="https://ulriklyngs.com/publications">Publications</a>
+<a href="https://ulyngs.github.io/pagedown-cv/cv.html">CV</a>
+<a href="../../index.html">Blog</a>
 <a href="../../index.xml">
 <i class="fa fa-rss"></i>
 </a>

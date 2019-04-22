@@ -1290,12 +1290,12 @@
   
   .nav-left {
     color: #777;
-    margin-left: 10% !important;
+    /*margin-left: 10% !important;*/
   }
   
   .nav-right {
     color: #777;
-    margin-right: 10% !important;
+    /*margin-right: 10% !important;*/
   }
   .nav-right a:hover,
   .radix-site-footer a:hover{
@@ -1328,6 +1328,13 @@
     overflow-x: auto !important;
     background: #f8f8f8;
   }
+  
+  
+  @media screen and (min-width: 768px) {
+    .nav-right {
+      margin-right: 10% !important;
+    }
+  }
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1351,8 +1358,11 @@
 <a href="index.html" class="title">Ulrik Lyngs</a>
 </div>
 <div class="nav-right">
-<a href="index.html">Posts</a>
-<a href="https://ulriklyngs.com">Back to main site</a>
+<a href="https://ulriklyngs.com">Home</a>
+<a href="https://ulriklyngs.com/projects">Projects</a>
+<a href="https://ulriklyngs.com/publications">Publications</a>
+<a href="https://ulyngs.github.io/pagedown-cv/cv.html">CV</a>
+<a href="index.html">Blog</a>
 <a href="index.xml">
 <i class="fa fa-rss"></i>
 </a>
