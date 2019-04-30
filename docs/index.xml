@@ -12,7 +12,17 @@
       <link>https://ulyngs.github.io/blog/</link>
     </image>
     <generator>Radix</generator>
-    <lastBuildDate>Wed, 20 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>367 Tools of Resistance in the Battle for Online Attention</title>
+      <dc:creator>Ulrik Lyngs</dc:creator>
+      <link>https://ulyngs.github.io/blog/posts/2019-04-30-367-tools-of-resistance-in-the-battle-for-online-attention</link>
+      <description>What the current landscape of ‘digital self-control tools’ looks like, and the psychology behind it\: 
+A summary of our [CHI 2019](https://chi2019.acm.org) paper [Self-Control in Cyberspace: Applying Dual Systems Theory to a Review of Digital Self-Control Tools](https://ulriklyngs.com/publications).</description>
+      <guid>https://ulyngs.github.io/blog/posts/2019-04-30-367-tools-of-resistance-in-the-battle-for-online-attention</guid>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://ulyngs.github.io/blog/posts/2019-04-30-367-tools-of-resistance-in-the-battle-for-online-attention/figures/preview.png" medium="image" type="image/png" width="1600" height="902"/>
+    </item>
     <item>
       <title>How to Use Pandoc Filters for Advanced Customisation of Your R Markdown Documents</title>
       <dc:creator>Ulrik Lyngs</dc:creator>
