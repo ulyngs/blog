@@ -24,7 +24,7 @@ navbar:
     - text: "Publications"
       href: "https://ulriklyngs.com/publications"
     - text: "CV"
-      href: "https://ulyngs.github.io/pagedown-cv/cv.html"
+      href: "https://ulyngs.github.io/pagedown-cv/website-cv.html"
     - text: "Blog"
       href: index.html
     - icon: fa fa-rss
